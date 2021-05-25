@@ -75,7 +75,7 @@ enum
 #define BATTERY_LEVEL_EMPTY    0     /* Value of battery when empty */
 
 #define CONNECTION_INTERVAL    80    /* Connection interval of 100 ms */
-#define SLAVE_LATENCY          0     /* Slave latency of 0 */
+#define PERIPHERAL_LATENCY     0     /* Peripheral latency of 0 */
 #define SUPERVISION_TIMEOUT    300   /* link Supervision timeout of 3 seconds */
 
 #define DUMMY                  0   /* Dummy value to pass to timer init function
@@ -551,7 +551,7 @@ wiced_bt_gatt_status_t low_power_208xx_gatt_connect_callback(wiced_bt_gatt_conne
             /* Update connection parameters to 100 ms */
             if(TRUE != wiced_bt_l2cap_update_ble_conn_params(p_conn_status->bd_addr,
                                        CONNECTION_INTERVAL, CONNECTION_INTERVAL,
-                                           SLAVE_LATENCY, SUPERVISION_TIMEOUT))
+                                           PERIPHERAL_LATENCY, SUPERVISION_TIMEOUT))
             {
                 WICED_BT_TRACE("Connection parameters update failed\r\n");
             }

@@ -50,7 +50,7 @@
 #define HIDOFF_SLEEP_TIME 10000000
 
 /* enum for system state */
-enum
+typedef enum
 {
     SLEEP_WITHOUT_BLE,
     SLEEP_WITH_ADV,
@@ -149,7 +149,11 @@ void application_start(void)
 
     /* configure to sleep if sensor is idle */
     low_power_sleep_config.sleep_mode               = WICED_SLEEP_MODE_NO_TRANSPORT;
+ #if defined(CYBT_213043_EVAL)
+    low_power_sleep_config.device_wake_mode         = WICED_SLEEP_WAKE_ACTIVE_HIGH;
+#else
     low_power_sleep_config.device_wake_mode         = WICED_SLEEP_WAKE_ACTIVE_LOW;
+#endif
     low_power_sleep_config.device_wake_source       = WICED_SLEEP_WAKE_SOURCE_GPIO;
     low_power_sleep_config.device_wake_gpio_num     = WICED_GET_PIN_FOR_BUTTON(WICED_PLATFORM_BUTTON_1);
     low_power_sleep_config.host_wake_mode           = WICED_SLEEP_WAKE_ACTIVE_HIGH;

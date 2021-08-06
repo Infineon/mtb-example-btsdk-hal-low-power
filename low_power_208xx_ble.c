@@ -60,7 +60,7 @@
  ******************************************************************/
 
 /* enum for system state */
-enum
+typedef enum
 {
     SLEEP_WITHOUT_BLE,
     SLEEP_WITH_ADV,

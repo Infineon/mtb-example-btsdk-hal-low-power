@@ -158,11 +158,8 @@ void low_power_208xx_app_init(void)
     WICED_BT_TRACE("Current Raw RTC clock: %d\r\n", curr_time.wiced_rtc64);
 
     /* Initialize Notification timer */
-    if(WICED_BT_SUCCESS != wiced_init_timer(&low_power_208xx_notification_timer_handle,
-           &low_power_208xx_timeout, DUMMY, WICED_MILLI_SECONDS_PERIODIC_TIMER))
-    {
-        WICED_BT_TRACE("Notification timer failed\r\n");
-    }
+    wiced_init_timer(&low_power_208xx_notification_timer_handle,
+           &low_power_208xx_timeout, DUMMY, WICED_MILLI_SECONDS_PERIODIC_TIMER);
 
     /* Allow peer to pair */
     wiced_bt_set_pairable_mode(WICED_TRUE, FALSE);
@@ -477,18 +474,12 @@ wiced_bt_gatt_status_t low_power_208xx_gatt_write_handler(wiced_bt_gatt_write_t
         if(GATT_CLIENT_CONFIG_NOTIFICATION == app_bas_battery_level_client_char_config[0] &&
                 GATT_CLIENT_CONFIG_NOTIFICATION != old_cccd)
         {
-            if(WICED_BT_SUCCESS != wiced_start_timer(&low_power_208xx_notification_timer_handle,
-                                                           NOTFICATION_TIME_MS))
-            {
-                WICED_BT_TRACE("Notification timer start failed\r\n");
-            }
+            wiced_start_timer(&low_power_208xx_notification_timer_handle,
+                              NOTFICATION_TIME_MS);
         }
         else if(GATT_CLIENT_CONFIG_NONE == app_bas_battery_level_client_char_config[0])
         {
-            if(WICED_BT_SUCCESS != wiced_stop_timer(&low_power_208xx_notification_timer_handle))
-            {
-                WICED_BT_TRACE("Notification timer stop failed\r\n");
-            }
+            wiced_stop_timer(&low_power_208xx_notification_timer_handle);
         }
     }
 

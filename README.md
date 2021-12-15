@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 ## CYW208xx Low Power
 
-This example demonstrates low power modes on CYW20819, CYW20820 and CYW89820 using ModusToolbox IDE.
+This example demonstrates low power modes on CYW20819, CYW20820 and CYW89820 using ModusToolbox&#8482;.
 
 ### Requirements
 
-[ModusToolbox™ IDE](https://www.cypress.com/products/modustoolbox-software-environment)
+[ModusToolbox&#8482;](https://www.cypress.com/products/modustoolbox-software-environment)
 
 Programming Language: C
 
@@ -29,7 +29,7 @@ This example uses the kit’s default configuration. Refer to the kit guide to e
 
 ### Software Setup
 
-This code example consists of two parts: a client and a server. For the client, download and install the CySmart app for [iOS](https://itunes.apple.com/us/app/cysmart/id928939093?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.cypress.cysmart&hl=en). You can also use the [CySmart Host Emulation Tool](http://www.cypress.com/go/cysmart) Windows PC application if you have access to the [CY5677 CySmart BLE 4.2 USB Dongle](http://www.cypress.com/documentation/development-kitsboards/cy5677-cysmart-bluetooth-low-energy-ble-42-usb-dongle).
+This code example consists of two parts: a client and a server. For the client, download and install the CySmart app for [iOS](https://itunes.apple.com/us/app/cysmart/id928939093?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.cypress.cysmart&hl=en). You can also use the [CySmart Host Emulation Tool](http://www.cypress.com/go/cysmart) Windows PC application if you have access to the [CY5677 CySmart LE 4.2 USB Dongle](http://www.cypress.com/documentation/development-kitsboards/cy5677-cysmart-bluetooth-low-energy-ble-42-usb-dongle).
 
 Scan the following QR codes from your mobile phone to download the CySmart app.
 
@@ -43,9 +43,9 @@ This example requires no additional software or tools.
 
 If you are unfamiliar with this process, see [KBA225201](https://community.cypress.com/docs/DOC-15968) for all the details.
 
-#### In the ModusToolbox IDE
+#### In the ModusToolbox&#8482; IDE
 
-1. Click the **New Application** link in the Quick Panel (or, use **File > New > ModusToolbox IDE Application**).
+1. Click the **New Application** link in the Quick Panel (or, use **File > New > ModusToolbox&#8482; Application**).
 2. Pick your kit. You must use a kit or device supported by the code example.  Some application settings (e.g. which pin controls an LED) may be adjusted automatically based on the kit you select.
 3. In the **Starter Application** window, choose the example.
 4. Click **Next** and complete the application creation process.
@@ -64,7 +64,7 @@ Ensure that the development environment is set up correctly. See KBAnnnnn for de
 
 1. Connect the kit to your PC using the provided USB cable through the USB connector.
 
-2. If you want to measure power consumption, connect an ammeter across J15.1 and J15.2, and a second ammeter across J8.2 and J8.4 to measure current in VDDIO and VBAT domains respectively as shown in Figure 1. If you don’t have 2 ammeters, then measure current on one domain at a time. Note that the VPA_BT power domain is not used on this kit and hence there is no need to measure current on this domain.
+2. If you want to measure power consumption, connect an ammeter across J15.1 and J15.2, and a second ammeter across J8.2 and J8.4 to measure current in VDDIO and VBAT domains respectively as shown in Figure 1. If you don't have 2 ammeters, then measure current on one domain at a time. Note that the VPA_BT power domain is not used on this kit and hence there is no need to measure current on this domain.
 
 Figure 1. CYW920819EVB-02 Jumpers to measure Current
 
@@ -72,15 +72,15 @@ Figure 1. CYW920819EVB-02 Jumpers to measure Current
 
 3. Remove jumpers J14 and J18 to disable unused peripherals on the evaluation kit.
 
-4. The USB Serial interface on the kit provides access to the two UART interfaces of the CYW20819 device – WICED HCI UART, and WICED Peripheral UART (PUART). The HCI UART is used only for downloading the application code in this code example and the PUART is used for printing the Bluetooth stack and application trace messages. Open your terminal software and select the PUART COM port, with a baud rate setting of 115200 bps. If you want to disable the trace messages, then comment out the following line in low_power_208xx.c:
+4. The USB Serial interface on the kit provides access to the two UART interfaces of the CYW20819 device - "WICED HCI UART", and "WICED Peripheral UART" (PUART). The HCI UART is used only for downloading the application code in this code example and the PUART is used for printing the Bluetooth&#174; stack and application trace messages. Open your terminal software and select the PUART COM port, with a baud rate setting of 115200 bps. If you want to disable the trace messages, then comment out the following line in low_power_208xx.c:
 *wiced_set_debug_uart( WICED_ROUTE_DEBUG_TO_PUART );*
 
 5. Program the board.
 
-   ##### Using ModusToolbox IDE *(Subject to change)*
+   ##### Using the ModusToolbox&#8482; IDE
 
    1. Select the application project in the Project Exporer
-   2. In the **Quick Panel**, scroll down, and click **\<App Name\> Build and Program**.
+   2. In the **Quick Panel**, scroll down, and click **\<App Name\> Program**.
 
    ##### Using CLI
 
@@ -89,7 +89,7 @@ Figure 1. CYW920819EVB-02 Jumpers to measure Current
 
 **Note**: If the download fails, it is possible that a previously loaded application is preventing programming. For example, the application may use a custom baud rate that the download process does not detect or the device may be in low-power mode. In that case, it may be necessary to put the board in recovery mode, and then try the programming operation again from the IDE. To enter recovery mode, first, press and hold the Recover button (SW1), press and release the Reset button (SW2), and then release the Recover button (SW1).
 
-6. After the programming is complete, the device will boot up and enter ePDS mode. Give the device a few seconds (~5) to enter ePDS mode. Note the current readings from ammeters. These are the current consumed in ePDS mode with no Bluetooth activity.
+6. After the programming is complete, the device will boot up and enter ePDS mode. Give the device a few seconds (~5) to enter ePDS mode. Note the current readings from ammeters. These are the current consumed in ePDS mode with no Bluetooth&#174; activity.
 
 Figure 2. Bootup Log
 
@@ -102,13 +102,13 @@ Figure 3. Start Advertisement Log
 ![ADV](./images/ADV.png)
 
 8. Do the following to test a connection using the CySmart mobile app:
-    1. Turn ON Bluetooth on your Android or iOS device.
+    1. Turn ON Bluetooth&#174; on your Android or iOS device.
     2. Launch the CySmart app.
-    3. Swipe down on the CySmart app home screen to start scanning for BLE Peripherals; your device appears in the CySmart app home screen. Select your device to establish a BLE connection. Once the device is connected, you can read the current numbers from the ammeters. These are the current in ePDS mode with a connection at a connection interval of 100 ms.
+    3. Swipe down on the CySmart app home screen to start scanning for LE Peripherals; your device appears in the CySmart app home screen. Select your device to establish an LE connection. Once the device is connected, you can read the current numbers from the ammeters. These are the current in ePDS mode with a connection at a connection interval of 100 ms.
     4. Select the GATT DB from the carousel view.
     5. Select Battery Service and then select Characteristics.
     6. Select Notify. CYW920819EVB-02 will start sending GATT notifications to the mobile device. Note the current readings on the ammeters. These are the current in ePDS mode with a connection at a connection interval of 100 ms and notifications being sent every 5 seconds.
-    7. Disconnect the Bluetooth connection by pressing SW3 on the kit or by backing out from the mobile app. The device will enter HID-Off mode for 10 seconds. Note the current numbers. These are the current numbers in HID-Off mode.
+    7. Disconnect the Bluetooth&#174; connection by pressing SW3 on the kit or by backing out from the mobile app. The device will enter HID-Off mode for 10 seconds. Note the current numbers. These are the current numbers in HID-Off mode.
 
 Figure 4. Connection, Pairing, and Connection Parameters Update Messages
 
@@ -127,27 +127,27 @@ Figure 5. Disconnection, HID-Off, and Restart Trace Messages
 
 ### Design and Implementation
 
-This code example implements a GATT Server and GAP Peripheral role on CYW920819EVB-02. Once the device is powered on, it boots up, configures sleep, initializes the Bluetooth stack, registers a button interrupt and GATT database, and then enters ePDS mode.
+This code example implements a GATT Server and GAP Peripheral role on CYW920819EVB-02. Once the device is powered on, it boots up, configures sleep, initializes the Bluetooth&#174; stack, registers a button interrupt and GATT database, and then enters ePDS mode.
 You need to press switch SW3 on the kit to start low-duty advertisement. The device is still in ePDS mode. You can now connect to the device using a GAP Central device. Upon connection, the device will request connection parameters to be updated (specifically, the connection interval to 100 ms). If the request is accepted, the connection interval changes to 100 ms. The device remains in ePDS mode and maintains the connection by sending empty packets. The GAP Central device can now discover all attributes and enable GATT notifications. The peripheral will start sending a dummy battery level value every 5 seconds.
 The GATT Server implements a Battery Service with a Battery Level characteristic. This characteristic is readable and notifiable.
-The application code and the Bluetooth stack runs on the Arm® Cortex®-M4 core of the CYW20819 SoC. The application-level source files for this code example are listed in Table 1.
+The application code and the Bluetooth&#174; stack runs on the Arm&#174 Cortex&#174-M4 core of the CYW20819 SoC. The application-level source files for this code example are listed in Table 1.
 
 Table 1. Code Example File Structure
 |**File Name**|**Comments**|
 |-------------|------------|
 |low_power_20819.c|Contains the application_start() function, which is the entry point for execution of the user application code after device startup. It also has the sleep callback function used by the PMU. The contents in this file can be referenced to implement low-power modes in other applications.|
-|app_bt_cfg.c, app_bt_cfg.h|These files contain the runtime Bluetooth stack configuration parameters such as device name and advertisement/connection settings.|
-|cycfg_bt.h, cycfg_gatt_db.c, cycfg_gatt_db.h|These files reside in the GeneratedSource folder under the application folder. They contain the GATT database information generated using the Bluetooth Configurator tool.|
-|low_power_20819_ble.c|This file contains the Bluetooth events callback function along with other functions to service Bluetooth events. It also contains the button callback function.|
+|app_bt_cfg.c, app_bt_cfg.h|These files contain the runtime Bluetooth&#174; stack configuration parameters such as device name and advertisement/connection settings.|
+|cycfg_bt.h, cycfg_gatt_db.c, cycfg_gatt_db.h|These files reside in the GeneratedSource folder under the application folder. They contain the GATT database information generated using the Bluetooth&#174; Configurator tool.|
+|low_power_20819_ble.c|This file contains the Bluetooth&#174; events callback function along with other functions to service Bluetooth&#174; events. It also contains the button callback function.|
 
 ###Application Flow
 
 The following diagrams show the flow of the application code.
     	Figure 6 shows the flow of the application when it boots up.
     	Figure 7 shows the flow of the button callback.
-    	Figure 8 shows the flow of BT stack management event callbacks.
+    	Figure 8 shows the flow of Bluetooth&#174; stack management event callbacks.
     	Figure 9 shows the flow of GATT event callbacks.
-    	Figure 10 shows the tree of the functions that are called on the BT and GATT event callbacks from the stack.
+    	Figure 10 shows the tree of the functions that are called on the Bluetooth&#174; and GATT event callbacks from the stack.
 
 Figure 6. Application Flow After Bootup
 
@@ -157,7 +157,7 @@ Figure 7. Button Callback Flow
 
 ![ButCB](./images/ButCB.png)
 
-Figure 8. BT Stack Management Callback Flow
+Figure 8. Bluetooth&#174; Stack Management Callback Flow
 
 ![BTStack](./images/BTStack.png)
 
@@ -165,7 +165,7 @@ Figure 9. GATT Event Callback Flow
 
 ![EventCB](./images/EventCB.png)
 
-Figure 10. BT Management and GATT Events Function Call Tree
+Figure 10. Bluetooth&#174; Management and GATT Events Function Call Tree
 
 ![GATT](./images/GATT.png)
 
@@ -178,7 +178,7 @@ Table 2. CYW20819 Current in Different Modes
 
 | State                                   | ePDS Enabled VDDIO | ePDS Enabled VBAT | ePDS Disabled VDDIO | ePDS Disabled VBAT |
 |-----------------------------------------|--------------------|-------------------|---------------------|--------------------|
-| No Bluetooth activity                   | 2.1 uA             | 7.7 uA            | 47.9 uA             | 0.97 mA            |
+| No Bluetooth&#174; activity                   | 2.1 uA             | 7.7 uA            | 47.9 uA             | 0.97 mA            |
 | ADV (2.56 seconds interval)             | 2.3 uA             | 26.1 uA           | 47.9 uA             | 0.98 uA            |
 | Connection (100 ms connection interval) | 3.2 uA             | 147.2 uA          | 47.9 uA             | 1.02 mA            |
 | Notifications (5 s interval)            | 3.3 uA             | 148.3 uA          | 47.9 uA             | 1.02 mA            |
@@ -211,7 +211,7 @@ Table 5. CYW20820 Current in Different Modes
 
 | State                                   | ePDS Enabled VDDIO | ePDS Enabled VBAT | ePDS Disabled VDDIO | ePDS Disabled VBAT |
 |-----------------------------------------|--------------------|-------------------|---------------------|--------------------|
-| No Bluetooth activity                   | 2.45 uA             | 6.21 uA            | 48.62 uA             | 0.98 mA            |
+| No Bluetooth&#174; activity                   | 2.45 uA             | 6.21 uA            | 48.62 uA             | 0.98 mA            |
 | ADV (2.56 seconds interval)             | 2.65 uA             | 20.65 uA           | 45.08 uA             | 0.99 uA            |
 | Connection (100 ms connection interval) | 3.89 uA             | 137.8 uA          | 45.11 uA             | 1.02 mA            |
 | Notifications (5 s interval)            | 4.15 uA             | 142.54 uA          | 45.23 uA             | 1.02 mA            |
@@ -243,7 +243,7 @@ Table 7. CYW20820 Current in Different Connection Intervals
 Note that these current values also include some leakage current on the board because some GPIOs connected to the on-board components draw current. For accurate current numbers, see the device datasheet.
 
 ####Resources and Settings
-This example uses the default device configurator settings i.e., when this example is imported to ModusToolbox, the IDE creates the file design.modus file that is used for design configuration with default settings for the kit. Note that in the design.modus file, the SPI and I2C modules are enabled, but because these are not used in the application, they will not cause any current leakage. It also provides the GATT database files so you don’t have to generate the files.
+This example uses the default device configurator settings i.e., when this example is imported to ModusToolbox&#8482;, the IDE creates the file design.modus file that is used for design configuration with default settings for the kit. Note that in the design.modus file, the SPI and I2C modules are enabled, but because these are not used in the application, they will not cause any current leakage. It also provides the GATT database files so you don’t have to generate the files.
 
 ###Reusing This Example
 This example is designed in a way so that you can use the low-power functions from this example in your own example with minimal changes.
@@ -252,11 +252,11 @@ This example is designed in a way so that you can use the low-power functions fr
 
 | Application Notes |  |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| [AN225684 ](http://www.cypress.com/an225684) – Getting Started with CYW208xx | Describes the CYW208xx device and demonstrates how to build your first ModusToolbox project |
+| [AN225684 ](http://www.cypress.com/an225684) – Getting Started with CYW208xx | Describes the CYW208xx device and demonstrates how to build your first ModusToolbox&#8482; project |
 
 | Code Examples |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
-| Visit the [Cypress GitHub](https://www.cypress.com/mtb-github) repo for a comprehensive collection of code examples using ModusToolbox IDE |
+| Visit the [Infineon GitHub](https://www.cypress.com/mtb-github) repo for a comprehensive collection of code examples using ModusToolbox&#8482;|
 
 | Development Kit Documentation |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -264,41 +264,48 @@ This example is designed in a way so that you can use the low-power functions fr
 
 | Tools Documentation |  |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| [ModusToolbox IDE](http://www.cypress.com/modustoolbox)| The ModusToolbox cross-platform IDE simplifies development for IoT designers. Look in <ModusToolbox install>/docs.|
+| [ModusToolbox&#8482;](http://www.cypress.com/modustoolbox)| The ModusToolbox&#8482; cross-platform IDE simplifies development for IoT designers. Look in <ModusToolbox install>/docs.|
 
 #### Other Resources
 
-Cypress provides a wealth of data at www.cypress.com to help you to select the right device, and quickly and effectively integrate the device into your design.
+Infineon provides a wealth of data at www.infineon.com to help you to select the right device, and quickly and effectively integrate the device into your design.
 
+
+## BTSTACK version
+
+BTSDK AIROC&#8482; chips contain the embedded AIROC&#8482; Bluetooth&#174; stack, BTSTACK. Different chips use different versions of BTSTACK, so some assets may contain variant sets of files targeting the different versions in COMPONENT\_btstack\_vX (where X is the stack version). Applications automatically include the appropriate folder using the COMPONENTS make variable mechanism, and all BSPs declare which stack version should be used in the BSP .mk file, with a declaration such as:<br>
+> COMPONENTS+=btstack\_v1<br>
+or:<br>
+> COMPONENTS+=btstack\_v3
 
 ## Common application settings
 
 Application settings below are common for all BTSDK applications and can be configured via the makefile of the application or passed in via the command line.
 
-**BT\_DEVICE\_ADDRESS**
-> Set the BDA (Bluetooth Device Address) for your device. The address is 6 bytes, for example, 20819A10FFEE. By default, the SDK will set a BDA for your device by combining the 7 hex digit device ID with the last 5 hex digits of the host PC MAC address.
+##### BT\_DEVICE\_ADDRESS
+> Set the BDA (Bluetooth&#174; Device Address) for your device. The address is 6 bytes, for example, 20819A10FFEE. By default, the SDK will set a BDA for your device by combining the 7 hex digit device ID with the last 5 hex digits of the host PC MAC address.
 
-**UART**
+##### UART
 > Set to the UART port you want to use to download the application. For example 'COM6' on Windows or '/dev/ttyWICED\_HCI\_UART0' on Linux or '/dev/tty.usbserial-000154' on macOS. By default, the SDK will auto-detect the port.
 
-**ENABLE_DEBUG**
-> For HW debugging, configure ENABLE\_DEBUG=1. See the document [WICED-Hardware-Debugging](https://github.com/cypresssemiconductorco/btsdk-docs/blob/master/docs/BT-SDK/WICED-Hardware-Debugging.pdf) for more information. This setting configures GPIO for SWD.<br>
+##### ENABLE_DEBUG
+> For HW debugging, configure ENABLE\_DEBUG=1. See the document [AIROC&#8482;-Hardware-Debugging](https://github.com/cypresssemiconductorco/btsdk-docs/blob/master/docs/BT-SDK/WICED-Hardware-Debugging.pdf) for more information. This setting configures GPIO for SWD.<br>
 >
    - CYW920819EVB-02/CYW920820EVB-02: SWD signals are shared with D4 and D5, see SW9 in schematics.
    - CYBT-213043-MESH/CYBT-213043-EVAL/CYBT-253059-EVAL: SWD signals are routed to P12=SWDCK and P13=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
-   - CYBT-223058-EVAL/CYW920835M2EVB-01/CYBT-243053-EVAL/CYBLE-343072-EVAL-M2B/CYBLE-333074-EVAL-M2B: SWD signals are routed to P02=SWDCK and P03=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
+   - CYBT-223058-EVAL/CYW920835M2EVB-01/CYBT-243053-EVAL/CYBLE-343072-EVAL-M2B/CYBLE-333074-EVAL-M2B/CYBLE-343072-MESH: SWD signals are routed to P02=SWDCK and P03=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
    - CYBT-263065-EVAL/CYBT-273063-EVAL: SWD signals are routed to P02=SWDCK and P04=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
-   - CYBT-343026-EVAL/CYBT-353027-EVAL: SWD signals are routed to P11=SWDCK and P15=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
+   - CYBT-343026-EVAL/CYBT-353027-EVAL/CYBT-333047-EVAL: SWD signals are routed to P11=SWDCK and P15=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
    - CYBT-343052-EVAL: SWD signals are routed to P02=SWDCK and P03=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
    - CYBT-413055-EVAL/CYBT-413061-EVAL: SWD signals are routed to P16=SWDCK and P17=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
    - CYW989820EVB-01: SWDCK (P02) is routed to the J13 DEBUG connector, but not SWDIO. Add a wire from J10 pin 3 (PUART CTS) to J13 pin 2 to connect GPIO P10 to SWDIO.
    - CYW920719B2Q40EVB-01: PUART RX/TX signals are shared with SWDCK and SWDIO. Remove RX and TX jumpers on J10 when using SWD. PUART and SWD cannot be used simultaneously on this board unless these pins are changed from the default configuration.
    - CYW920721B2EVK-02: SWD signals are shared with D4 and D5, see SW9 in schematics.
-   - CYW920721M2EVK-02: The default setup uses P03 for SWDIO and P05 for SWDCK. Check the position of SW15 if using JLink with the DEBUG connector.
+   - CYW920721M2EVK-02/CYW920721M2EVB-03: The default setup uses P03 for SWDIO and P05 for SWDCK. Check the position of SW15 if using JLink with the DEBUG connector.
    - CYW920706WCDEVAL: SWD debugging requires fly-wire connections. The default setup P15 (J22 pin 3 or J24 pin 1) for SWDIO and P11 (J23 pin 5
     or J22 pin 4) for SWDCK.
    - CYW920735Q60EVB-01: SWD hardware debugging supported. The default setup uses the J13 debug header, P3 (J13 pin 2) for SWDIO and P2 (J13 pin 4) for SWDCK.  They can be optionally routed to D4 and D4 on the Arduino header J4, see SW9 in schematics.
-   - CYW920736M2EVB-01: SWD hardware debugging requires fly-wire connections. The only option is using P14 for SWDCK and P15 for SWDIO. These route to Arduino header J2, A1 and A0. These can be fly-wired to Arduino header J4, D4 and D5. From there the signals connect to the KitProg3 SWD bridge. In addition, the debug macros (SETUP_APP_FOR_DEBUG_IF_DEBUG_ENABLED and BUSY_WAIT_TILL_MANUAL_CONTINUE_IF_DEBUG_ENABLED) are placed in sparinit.c in code common to all applications for this device. Most applications for this device call bleprofile_GPIOInit() in subsequent code, overwriting the SWD pin configuration. To use hardware debugging after the call to bleprofile_GPIOInit(), place the debug macros in code after that call.
+   - CYW920736M2EVB-01: SWD hardware debugging requires fly-wire connections. The only option is using P14 for SWDCK and P15 for SWDIO. These route to Arduino header J2, A1 and A0. These can be fly-wired to Arduino header J4, D4 and D5. From there the signals connect to the KitProg3 SWD bridge. In addition, the debug macros (SETUP\_APP\_FOR\_DEBUG\_IF\_DEBUG\_ENABLED and BUSY\_WAIT\_TILL\_MANUAL\_CONTINUE\_IF\_DEBUG\_ENABLED) are placed in sparinit.c in code common to all applications for this device. Most applications for this device call bleprofile\_GPIOInit() in subsequent code, overwriting the SWD pin configuration. To use hardware debugging after the call to bleprofile\_GPIOInit(), place the debug macros in code after that call.
    - SWD hardware debugging is not supported on the following:
    >- CYW920721M2EVK-01
    >- CYW920835REF-RCU-01
@@ -309,14 +316,15 @@ Application settings below are common for all BTSDK applications and can be conf
    >- CYBT-423060-EVAL
    >- CYBT-483056-EVAL
    >- CYBT-483062-EVAL
+   >- CYW955572BTEVK-01
 
 ## Building code examples
 
-**Using the ModusToolbox IDE**
+**Using the ModusToolbox&#8482; Eclipse IDE**
 
-1. Install ModusToolbox 2.2 (or higher).
-2. In the ModusToolbox IDE, click the **New Application** link in the Quick Panel (or, use **File > New > ModusToolbox IDE Application**).
-3. Pick your board for BTSDK under AIROC Bluetooth BSPs.
+1. Install ModusToolbox&#8482; 2.2 (or higher).
+2. In the ModusToolbox&#8482; Eclipse IDE, click the **New Application** link in the Quick Panel (or, use **File > New > ModusToolbox IDE Application**).
+3. Pick your board for BTSDK under AIROC&#8482; Bluetooth&#174; BSPs.
 4. Select the application in the IDE.
 5. In the Quick Panel, select **Build** to build the application.
 6. To program the board (download the application), select **Program** in the Launches section of the Quick Panel.
@@ -324,7 +332,7 @@ Application settings below are common for all BTSDK applications and can be conf
 
 **Using command line**
 
-1. Install ModusToolbox 2.2 (or higher).
+1. Install ModusToolbox&#8482; 2.2 (or higher).
 2. On Windows, use Cygwin from \ModusToolbox\tools_2.x\modus-shell\Cygwin.bat to build apps.
 3. Use the tool 'project-creator-cli' under \ModusToolbox\tools_2.x\project-creator\ to create your application.<br/>
    > project-creator-cli --board-id (BSP) --app-id (appid) -d (dir) <br/>
@@ -358,21 +366,21 @@ Applications that support OTA upgrade can be updated via the peer OTA app in:<br
 See the readme.txt file located in the above folder for instructions.<br>
 To generate the OTA image for the app, configure OTA\_FW\_UPGRADE=1 in the app
 makefile, or append OTA\_FW\_UPGRADE=1 to a build command line, for example:
-> make PLATFORM=CYW955572BTEVK-01 OTA\_FW\_UPGRADE=1 build<br>
+> make PLATFORM=CYW920706WCDEVAL OTA\_FW\_UPGRADE=1 build<br>
 
 This will the generate \<app>.bin file in the 'build' folder.
 
 ## SDK software features
 
-- Dual-mode Bluetooth stack included in the ROM (BR/EDR and LE)
-- Bluetooth stack and profile level APIs for embedded Bluetooth application development
-- WICED HCI protocol to simplify host/MCU application development
+- Dual-mode Bluetooth&#174; stack included in the ROM (BR/EDR and LE)
+- Bluetooth&#174; stack and profile level APIs for embedded Bluetooth&#174; application development
+- AIROC&#8482; HCI protocol to simplify host/MCU application development
 - APIs and drivers to access on-board peripherals
-- Bluetooth protocols include GAP, GATT, SMP, RFCOMM, SDP, AVDT/AVCT, LE Mesh
+- Bluetooth&#174; protocols include GAP, GATT, SMP, RFCOMM, SDP, AVDT/AVCT, LE Mesh
 - LE and BR/EDR profile APIs, libraries, and sample apps
 - Support for Over-The-Air (OTA) upgrade
 - Device Configurator for creating custom pin mapping
-- Bluetooth Configurator for creating LE GATT Database
+- Bluetooth&#174; Configurator for creating LE GATT Database
 - Peer apps based on Android, iOS, Windows, etc. for testing and reference
 - Utilities for protocol tracing, manufacturing testing, etc.
 - Documentation for APIs, datasheets, profiles, and features
@@ -382,7 +390,7 @@ This will the generate \<app>.bin file in the 'build' folder.
 - Google support: Google Fast Pair Service (GFPS), Eddystone
 - Amazon support: Alexa Mobile Accessories (AMA)
 
-Note: this is a list of all features and profiles supported in BTSDK, but some AIROC devices may only support a subset of this list.
+Note: this is a list of all features and profiles supported in BTSDK, but some AIROC&#8482; devices may only support a subset of this list.
 
 ## List of boards available for use with BTSDK
 
@@ -391,21 +399,23 @@ Note: this is a list of all features and profiles supported in BTSDK, but some A
 - [CYW20820A1 chip](https://github.com/cypresssemiconductorco/20820A1)
     - [CYW920820EVB-02](https://github.com/cypresssemiconductorco/TARGET_CYW920820EVB-02), [CYW989820EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW989820EVB-01), [CYBT-243053-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-243053-EVAL), [CYBT-253059-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-253059-EVAL)
 - [CYW20721B2 chip](https://github.com/cypresssemiconductorco/20721B2)
-    - [CYW920721B2EVK-02](https://github.com/cypresssemiconductorco/TARGET_CYW920721B2EVK-02), [CYW920721M2EVK-01](https://github.com/cypresssemiconductorco/TARGET_CYW920721M2EVK-01), [CYW920721M2EVK-02](https://github.com/cypresssemiconductorco/TARGET_CYW920721M2EVK-02), [CYBT-423060-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-423060-EVAL), [CYBT-483062-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-483062-EVAL), [CYBT-413061-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-413061-EVAL)
+    - [CYW920721B2EVK-02](https://github.com/cypresssemiconductorco/TARGET_CYW920721B2EVK-02), [CYW920721M2EVK-01](https://github.com/cypresssemiconductorco/TARGET_CYW920721M2EVK-01), [CYW920721M2EVK-02](https://github.com/cypresssemiconductorco/TARGET_CYW920721M2EVK-02), [CYW920721M2EVB-03](https://github.com/Infineon/TARGET_CYW920721M2EVB-03), [CYBT-423060-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-423060-EVAL), [CYBT-483062-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-483062-EVAL), [CYBT-413061-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-413061-EVAL)
 - [CYW20719B2 chip](https://github.com/cypresssemiconductorco/20719B2)
     - [CYW920719B2Q40EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920719B2Q40EVB-01), [CYBT-423054-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-423054-EVAL), [CYBT-413055-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-413055-EVAL), [CYBT-483056-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-483056-EVAL)
 - [CYW20706A2 chip](https://github.com/cypresssemiconductorco/20706A2)
-    - [CYW920706WCDEVAL](https://github.com/cypresssemiconductorco/TARGET_CYW920706WCDEVAL), [CYBT-353027-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-353027-EVAL), [CYBT-343026-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-343026-EVAL)
+    - [CYW920706WCDEVAL](https://github.com/cypresssemiconductorco/TARGET_CYW920706WCDEVAL), [CYBT-353027-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-353027-EVAL), [CYBT-343026-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-343026-EVAL), [CYBT-333047-EVAL](https://github.com/Infineon/TARGET_CYBT-333047-EVAL)
 - [CYW20735B1 chip](https://github.com/cypresssemiconductorco/20735B1)
     - [CYW920735Q60EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920735Q60EVB-01), [CYBT-343052-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-343052-EVAL)
-- [CYW20736A1 chip](https://github.com/cypresssemiconductorco/20736A1)
-    - [CYW920736M2EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920736M2EVB-01)
-- [CYW20739B2 chip](https://github.com/cypresssemiconductorco/20739B2)
-    - [CYW920739M2EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920739M2EVB-01)
 - [CYW20835B1 chip](https://github.com/cypresssemiconductorco/20835B1)
-    - [CYW920835REF-RCU-01](https://github.com/cypresssemiconductorco/TARGET_CYW920835REF-RCU-01), [CYW920835M2EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920835M2EVB-01), [CYBLE-343072-EVAL-M2B](https://github.com/cypresssemiconductorco/TARGET_CYBLE-343072-EVAL-M2B), [CYBLE-333074-EVAL-M2B](https://github.com/cypresssemiconductorco/TARGET_CYBLE-333074-EVAL-M2B)
+    - [CYW920835REF-RCU-01](https://github.com/cypresssemiconductorco/TARGET_CYW920835REF-RCU-01), [CYW920835M2EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920835M2EVB-01), [CYBLE-343072-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-343072-EVAL-M2B), [CYBLE-333074-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-333074-EVAL-M2B), [CYBLE-343072-MESH](https://github.com/Infineon/TARGET_CYBLE-343072-MESH)
 - [CYW43012C0 chip](https://github.com/cypresssemiconductorco/43012C0)
     - [CYW9M2BASE-43012BT](https://github.com/cypresssemiconductorco/TARGET_CYW9M2BASE-43012BT), [CYW943012BTEVK-01](https://github.com/cypresssemiconductorco/TARGET_CYW943012BTEVK-01)
+- [CYW20736A1 chip](https://github.com/Infineon/20736A1)
+    - [CYW920736M2EVB-01](https://github.com/Infineon/TARGET_CYW920736M2EVB-01)
+- [CYW30739A0 chip](https://github.com/Infineon/30739A0)
+    - [CYW930739M2EVB-01](https://github.com/Infineon/TARGET_CYW930739M2EVB-01)
+- [CYW55572A1 chip](https://github.com/Infineon/55572A1)
+    - [CYW955572BTEVK-01](https://github.com/Infineon/TARGET_CYW955572BTEVK-01)
 
 
 ## Folder structure
@@ -414,7 +424,7 @@ All BTSDK code examples need the 'mtb\_shared\wiced\_btsdk' folder to build and 
 
 **dev-kit**
 
-This folder contains the files that are needed to build the embedded Bluetooth apps.
+This folder contains the files that are needed to build the embedded Bluetooth&#174; apps.
 
 * baselib: Files for chips supported by BTSDK. For example CYW20819, CYW20719, CYW20706, etc.
 
@@ -428,11 +438,11 @@ This folder contains the files that are needed to build the embedded Bluetooth a
 
 **tools**
 
-This folder contains tools and utilities need to test the embedded Bluetooth apps.
+This folder contains tools and utilities need to test the embedded Bluetooth&#174; apps.
 
-* btsdk-host-apps-bt-ble: Host apps (Client Control) for LE and BR/EDR embedded apps, demonstrates the use of WICED HCI protocol to control embedded apps.
+* btsdk-host-apps-bt-ble: Host apps (Client Control) for LE and BR/EDR embedded apps, demonstrates the use of AIROC&#8482; HCI protocol to control embedded apps.
 
-* btsdk-host-peer-apps-mesh: Host apps (Client Control) and Peer apps for embedded Mesh apps, demonstrates the use of WICED HCI protocol to control embedded apps, and configuration and provisioning from peer devices.
+* btsdk-host-peer-apps-mesh: Host apps (Client Control) and Peer apps for embedded Mesh apps, demonstrates the use of AIROC&#8482; HCI protocol to control embedded apps, and configuration and provisioning from peer devices.
 
 * btsdk-peer-apps-ble: Peer apps for embedded LE apps.
 
@@ -443,27 +453,27 @@ This folder contains tools and utilities need to test the embedded Bluetooth app
 See README.md in the sub-folders for more information.
 
 ## Software Tools
-The following tool applications are installed on your computer either with ModusToolbox, or by creating an application in the workspace that can use the tool.
+The following tool applications are installed on your computer either with ModusToolbox&#8482;, or by creating an application in the workspace that can use the tool.
 
-**BT Spy:**<br>
->   BTSpy is a trace viewer utility that can be used with WICED BT platforms to
+**BTSpy:**<br>
+>   BTSpy is a trace viewer utility that can be used with AIROC&#8482; Bluetooth&#174; platforms to
     view protocol and application trace messages from the embedded device. The
     utility is located in the folder below. For more information, see readme.txt in the same folder.<br>
     This utility can be run directly from the filesystem, or it can be run from
-    the Tools section of the ModusToolbox IDE QuickPanel, or by right-clicking
-    a project in the IDE Project Explorer pane and selecting the ModusToolbox
+    the Tools section of the ModusToolbox&#8482; QuickPanel, or by right-clicking
+    a project in the Project Explorer pane and selecting the ModusToolbox&#8482;
     context menu.<br>
     It is supported on Windows, Linux and macOS.<br>
     Location:  \<Workspace Dir>\wiced_btsdk\tools\btsdk-utils\BTSpy
 
-**BT/LE Profile Client Control:**<br>
+**Bluetooth&#174; Classic and LE Profile Client Control:**<br>
 >   This application emulates host MCU applications for LE and BR/EDR profiles.
-    It demonstrates WICED BT APIs. The application communicates with embedded
-    apps over the WICED HCI interface. The application is located in the folder
+    It demonstrates AIROC&#8482; Bluetooth&#174; APIs. The application communicates with embedded
+    apps over the "WICED HCI UART" interface. The application is located in the folder
     below. For more information, see readme.txt in the same folder.<br>
     This utility can be run directly from the filesystem, or it can be run from
-    the Tools section of the ModusToolbox IDE QuickPanel, or by right-clicking
-    a project in the IDE Project Explorer pane and selecting the ModusToolbox
+    the Tools section of the ModusToolbox&#8482; QuickPanel, or by right-clicking
+    a project in the Project Explorer pane and selecting the ModusToolbox&#8482;
     context menu.<br>
     It is supported on Windows, Linux, and macOS.<br>
     Location:  \<Workspace Dir>\wiced\_btsdk\tools\btsdk-host-apps-bt-ble\client_control
@@ -474,10 +484,10 @@ The following tool applications are installed on your computer either with Modus
     mesh networks. The application is located in the folder below. For more
     information, see readme.txt in the same folder.<br>
     This utility can be run directly from the filesystem, or it can be run from
-    the Tools section of the ModusToolbox IDE QuickPanel (if a mesh-capable
-    project is selected in the IDE Project Explorer pane), or by right-clicking
-    a mesh-capable project in the IDE Project Explorer pane and selecting the
-    ModusToolbox context menu.<br>
+    the Tools section of the ModusToolbox&#8482; QuickPanel (if a mesh-capable
+    project is selected in the Project Explorer pane), or by right-clicking
+    a mesh-capable project in the Project Explorer pane and selecting the
+    ModusToolbox&#8482; context menu.<br>
     The full version is provided for Windows (VS\_ClientControl) supporting all
     Mesh models.<br>
     A limited version supporting only the Lighting model (QT\_ClientControl) is
@@ -485,7 +495,7 @@ The following tool applications are installed on your computer either with Modus
     Location:  \<Workspace Dir>\wiced_btsdk\tools\btsdk-host-peer-apps-mesh\host
 
 **Peer apps:**<br>
->   Applications that run on Windows, iOS or Android and act as peer BT apps to
+>   Applications that run on Windows, iOS or Android and act as peer Bluetooth&#174; apps to
     demonstrate specific profiles or features, communicating with embedded apps
     over the air.<br>
     LE apps location:  \<Workspace Dir>\wiced\_btsdk\tools\btsdk-peer-apps-ble<br>
@@ -494,19 +504,19 @@ The following tool applications are installed on your computer either with Modus
 
 **Device Configurator:**<br>
 >   Use this GUI tool to create source code for a custom pin mapping for your device. Run this tool
-    from the Tools section of the ModusToolbox IDE QuickPanel, or by
-    right-clicking a project in the IDE Project Explorer pane and selecting the
-    ModusToolbox context menu.<br>
+    from the Tools section of the ModusToolbox&#8482; QuickPanel, or by
+    right-clicking a project in the Project Explorer pane and selecting the
+    ModusToolbox&#8482; context menu.<br>
     It is supported on Windows, Linux and macOS.<br>
     Note: The pin mapping is based on wiced\_platform.h for your board.<br>
     Location:  \<Install Dir>\tools_2.x\device-configurator
 
-**Bluetooth Configurator:**<br>
+**Bluetooth&#174; Configurator:**<br>
 >   Use this GUI tool to create and configure the LE GATT Database and the BR/EDR SDP Database, generated as source code for your
     application.<br>
-    Run this tool from the Tools section of the ModusToolbox IDE QuickPanel, or
-    by right-clicking a project in the IDE Project Explorer pane and selecting
-    the ModusToolbox context menu.<br>
+    Run this tool from the Tools section of the ModusToolbox&#8482; QuickPanel, or
+    by right-clicking a project in the Project Explorer pane and selecting
+    the ModusToolbox&#8482; context menu.<br>
     It is supported on Windows, Linux and macOS.<br>
     Location:  \<Install Dir>\tools_2.x\bt-configurator
 
@@ -514,10 +524,10 @@ The following tool applications are installed on your computer either with Modus
 To view application traces, there are 2 methods available. Note that the
 application needs to configure the tracing options.<br>
 
-1. WICED Peripheral UART - Open this port on your computer using a serial port
+1. "WICED Peripheral UART" - Open this port on your computer using a serial port
 utility such as Tera Term or PuTTY (usually using 115200 baud rate for non-Mesh apps, and 921600 for Mesh apps).<br>
-2. WICED HCI UART - Open this port on your computer using the Client Control
-application mentioned above (usually using 3M baud rate). Then run the BT Spy
+2. "WICED HCI UART" - Open this port on your computer using the Client Control
+application mentioned above (usually using 3M baud rate). Then run the BTSpy
 utility mentioned above.
 
 ## Using BSPs (platforms)
@@ -534,12 +544,12 @@ The application makefile has a default BSP. See "TARGET". The makefile also has 
 
 To create and use a complete custom BSP that you want to use in applications, perform the following steps:
 
-1. Select an existing BSP created through ModusToolbox Project Creator that you wish to use as a template.
+1. Select an existing BSP created through ModusToolbox&#8482; Project Creator that you wish to use as a template.
 2. Make a copy in the same folder and rename it. For example mtb\_shared\wiced\_btsdk\dev-kit\bsp\TARGET\_mybsp.<br/>
-   **Note:** This can be done in the system File Explorer and then refresh the workspace in ModusToolbox to see the new project.  Delete the .git sub-folder from the newly copied folder before refreshing in Eclipse.
+   **Note:** This can be done in the system File Explorer and then refresh the workspace in ModusToolbox&#8482; to see the new project.  Delete the .git sub-folder from the newly copied folder before refreshing in Eclipse.
    If done in the IDE, an error dialog may appear complaining about items in the .git folder being out of sync.  This can be resolved by deleting the .git sub-folder in the newly copied folder.
 
-3. In the new mtb\_shared\wiced\_btsdk\dev-kit\bsp\TARGET\_mybsp\<branch>\ folder, rename the existing/original (BSP).mk file to mybsp.mk.
+3. In the new mtb\_shared\wiced\_btsdk\dev-kit\bsp\TARGET\_mybsp\release-vX.X.X\ folder, rename the existing/original (BSP).mk file to mybsp.mk.
 4. In the application makefile, set TARGET=mybsp and add it to SUPPORTED\_TARGETS.
 5. In the application libs folder, edit the mtb.mk file and replace all instances of the template BSP name string with 'mybsp'.
 6. Update design.modus for your custom BSP if needed using the **Device Configurator** link under **Configurators** in the Quick Panel.
@@ -549,7 +559,7 @@ To create and use a complete custom BSP that you want to use in applications, pe
 
 To create a custom pin configuration to be used by multiple applications using an existing BSP that supports Device Configurator, perform the following steps:
 
-1. Create a folder COMPONENT\_(CUSTOM)\_design\_modus in the existing BSP folder. For example mtb\_shared\wiced\_btsdk\dev-kit\bsp\TARGET\_CYW920819EVB-02\<branch>\COMPONENT\_my\_design\_modus
+1. Create a folder COMPONENT\_(CUSTOM)\_design\_modus in the existing BSP folder. For example mtb\_shared\wiced\_btsdk\dev-kit\bsp\TARGET\_CYW920819EVB-02\release-vX.X.X\COMPONENT\_my\_design\_modus
 2. Copy the file design.modus from the reference BSP COMPONENT\_bsp\_design\_modus folder under mtb\_shared\wiced\_btsdk\dev-kit\bsp\ and place the file in the newly created COMPONENT\_(CUSTOM)\_design\_modus folder.
 3. In the application makefile, add the following two lines<br/>
    DISABLE\_COMPONENTS+=bsp\_design\_modus<br/>

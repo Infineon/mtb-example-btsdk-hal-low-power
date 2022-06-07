@@ -5,15 +5,15 @@ This example demonstrates low power modes on CYW20819, CYW20820 and CYW89820 usi
 
 ### Requirements
 
-[ModusToolbox&#8482;](https://www.cypress.com/products/modustoolbox-software-environment)
+[ModusToolbox&#8482;](https://www.infineon.com/cms/en/design-support/tools/sdk/modustoolbox-software/)
 
 Programming Language: C
 
-Associated Parts: [CYW20819](https://www.cypress.com/datasheet/CYW20819), [CYW20820](https://www.cypress.com/datasheet/CYW20820)
+Associated Parts: [CYW20819](https://www.infineon.com/dgdl/Infineon-CYW20819_Ultra_Low_Power_Bluetooth_LE_BR_EDR_Bluetooth_5.0_SoC-AdditionalTechnicalInformation-v07_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ee7dba070bf), [CYW20820](https://www.infineon.com/dgdl/Infineon-CYW20820_Ultra_Low_Power_Bluetooth_LE_BR_EDR_Bluetooth_5.0_SoC-AdditionalTechnicalInformation-v06_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ee7e70770d1)
 
 ### Supported Kits
-* [CYW920819EVB-02 Evaluation Kit](http://www.cypress.com/CYW920819EVB-02)
-* [CYW920820EVB-02 Evaluation kit](http://www.cypress.com/CYW920820EVB-02)<br/>
+* [CYW920819EVB-02 Evaluation Kit](https://www.infineon.com/cms/en/product/evaluation-boards/cyw920819evb-02/)
+* [CYW920820EVB-02 Evaluation kit]( https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-bluetooth-le-bluetooth-multiprotocol/)<br/>
 
 Simply pick the supported kit in the IDE's New Application wizard. When you select a supported kit in the new application wizard the example is reconfigured automatically to work with the kit.
 
@@ -29,7 +29,7 @@ This example uses the kit’s default configuration. Refer to the kit guide to e
 
 ### Software Setup
 
-This code example consists of two parts: a client and a server. For the client, download and install the CySmart app for [iOS](https://itunes.apple.com/us/app/cysmart/id928939093?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.cypress.cysmart&hl=en). You can also use the [CySmart Host Emulation Tool](http://www.cypress.com/go/cysmart) Windows PC application if you have access to the [CY5677 CySmart LE 4.2 USB Dongle](http://www.cypress.com/documentation/development-kitsboards/cy5677-cysmart-bluetooth-low-energy-ble-42-usb-dongle).
+This code example consists of two parts: a client and a server. For the client, download and install the CySmart app for [iOS](https://itunes.apple.com/us/app/cysmart/id928939093?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.cypress.cysmart&hl=en). You can also use the [CySmart Host Emulation Tool](https://www.infineon.com/cms/en/design-support/tools/utilities/wireless-connectivity/cysmart-bluetooth-le-test-and-debug-tool/) Windows PC application if you have access to the [CY5677 CySmart LE 4.2 USB Dongle](https://www.infineon.com/cms/en/product/evaluation-boards/cy5677/).
 
 Scan the following QR codes from your mobile phone to download the CySmart app.
 
@@ -41,7 +41,7 @@ This example requires no additional software or tools.
 
 ### Using the Code Example
 
-If you are unfamiliar with this process, see [KBA225201](https://community.cypress.com/docs/DOC-15968) for all the details.
+If you are unfamiliar with this process, see [KBA225201](https://community.infineon.com/t5/Knowledge-Base-Articles/Importing-Code-Example-into-ModusToolbox-IDE-KBA225201/ta-p/250475) for all the details.
 
 #### In the ModusToolbox&#8482; IDE
 
@@ -50,7 +50,7 @@ If you are unfamiliar with this process, see [KBA225201](https://community.cypre
 3. In the **Starter Application** window, choose the example.
 4. Click **Next** and complete the application creation process.
 
- If you are unfamiliar with this process, see [KBA225201](https://community.cypress.com/docs/DOC-15968) for all the details.
+ If you are unfamiliar with this process, see [KBA225201](https://community.infineon.com/t5/Knowledge-Base-Articles/Importing-Code-Example-into-ModusToolbox-IDE-KBA225201/ta-p/250475) for all the details.
 
 #### In Command Line Tools
 
@@ -84,7 +84,7 @@ Figure 1. CYW920819EVB-02 Jumpers to measure Current
 
    ##### Using CLI
 
-   1. From the Cygwin terminal, execute the command **make build** to build the program for the defalut target. You can specify a tool chain as well (e.g. **make TOOLCHAIN=GCC_ARM** .)
+   1. From the Cygwin terminal, execute the command **make build** to build the program for the default target. You can specify a tool chain as well (e.g. **make TOOLCHAIN=GCC_ARM** .)
    2. Execute command **make qprogram** to program the built application to the board.
 
 **Note**: If the download fails, it is possible that a previously loaded application is preventing programming. For example, the application may use a custom baud rate that the download process does not detect or the device may be in low-power mode. In that case, it may be necessary to put the board in recovery mode, and then try the programming operation again from the IDE. To enter recovery mode, first, press and hold the Recover button (SW1), press and release the Reset button (SW2), and then release the Recover button (SW1).
@@ -252,24 +252,23 @@ This example is designed in a way so that you can use the low-power functions fr
 
 | Application Notes |  |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| [AN225684 ](http://www.cypress.com/an225684) – Getting Started with CYW208xx | Describes the CYW208xx device and demonstrates how to build your first ModusToolbox&#8482; project |
+| [AN225684 ](https://www.infineon.com/dgdl/Infineon-AN225684_Getting_Started_with_CYW20819-ApplicationNotes-v02_00-EN.PDF?fileId=8ac78c8c7cdc391c017d0d3674d1669d) – Getting Started with CYW20819 | Describes the CYW20819 device and demonstrates how to build your first ModusToolbox&#8482; project |
 
 | Code Examples |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
-| Visit the [Infineon GitHub](https://www.cypress.com/mtb-github) repo for a comprehensive collection of code examples using ModusToolbox&#8482;|
+| Visit the [Infineon GitHub](https://github.com/Infineon/Code-Examples-for-ModusToolbox-Software) repo for a comprehensive collection of code examples using ModusToolbox&#8482;|
 
 | Development Kit Documentation |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
-| [CYW20819EVB-02 Evaluation Kit](http://www.cypress.com/CYW920819EVB-02) |
+| [CYW20819EVB-02 Evaluation Kit](https://www.infineon.com/cms/en/product/evaluation-boards/cyw920819evb-02/) |
 
 | Tools Documentation |  |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| [ModusToolbox&#8482;](http://www.cypress.com/modustoolbox)| The ModusToolbox&#8482; cross-platform IDE simplifies development for IoT designers. Look in <ModusToolbox install>/docs.|
+| [ModusToolbox&#8482;](https://www.infineon.com/cms/en/design-support/tools/sdk/modustoolbox-software/)| The ModusToolbox&#8482; cross-platform IDE simplifies development for IoT designers. Look in <ModusToolbox install>/docs.|
 
 #### Other Resources
 
 Infineon provides a wealth of data at www.infineon.com to help you to select the right device, and quickly and effectively integrate the device into your design.
-
 
 ## BTSTACK version
 
@@ -289,7 +288,7 @@ Application settings below are common for all BTSDK applications and can be conf
 > Set to the UART port you want to use to download the application. For example 'COM6' on Windows or '/dev/ttyWICED\_HCI\_UART0' on Linux or '/dev/tty.usbserial-000154' on macOS. By default, the SDK will auto-detect the port.
 
 ##### ENABLE_DEBUG
-> For HW debugging, configure ENABLE\_DEBUG=1. See the document [AIROC&#8482;-Hardware-Debugging](https://github.com/cypresssemiconductorco/btsdk-docs/blob/master/docs/BT-SDK/WICED-Hardware-Debugging.pdf) for more information. This setting configures GPIO for SWD.<br>
+> For HW debugging, configure ENABLE\_DEBUG=1. See the document [AIROC&#8482;-Hardware-Debugging](https://github.com/Infineon/btsdk-docs/blob/master/docs/BT-SDK/WICED-Hardware-Debugging.pdf) for more information. This setting configures GPIO for SWD.<br>
 >
    - CYW920819EVB-02/CYW920820EVB-02: SWD signals are shared with D4 and D5, see SW9 in schematics.
    - CYBT-213043-MESH/CYBT-213043-EVAL/CYBT-253059-EVAL: SWD signals are routed to P12=SWDCK and P13=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
@@ -300,18 +299,18 @@ Application settings below are common for all BTSDK applications and can be conf
    - CYBT-413055-EVAL/CYBT-413061-EVAL: SWD signals are routed to P16=SWDCK and P17=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
    - CYW989820EVB-01: SWDCK (P02) is routed to the J13 DEBUG connector, but not SWDIO. Add a wire from J10 pin 3 (PUART CTS) to J13 pin 2 to connect GPIO P10 to SWDIO.
    - CYW920719B2Q40EVB-01: PUART RX/TX signals are shared with SWDCK and SWDIO. Remove RX and TX jumpers on J10 when using SWD. PUART and SWD cannot be used simultaneously on this board unless these pins are changed from the default configuration.
-   - CYW920721B2EVK-02: SWD signals are shared with D4 and D5, see SW9 in schematics.
    - CYW920721M2EVK-02/CYW920721M2EVB-03: The default setup uses P03 for SWDIO and P05 for SWDCK. Check the position of SW15 if using JLink with the DEBUG connector.
    - CYW920706WCDEVAL: SWD debugging requires fly-wire connections. The default setup P15 (J22 pin 3 or J24 pin 1) for SWDIO and P11 (J23 pin 5
     or J22 pin 4) for SWDCK.
    - CYW920735Q60EVB-01: SWD hardware debugging supported. The default setup uses the J13 debug header, P3 (J13 pin 2) for SWDIO and P2 (J13 pin 4) for SWDCK.  They can be optionally routed to D4 and D4 on the Arduino header J4, see SW9 in schematics.
    - CYW920736M2EVB-01: SWD hardware debugging requires fly-wire connections. The only option is using P14 for SWDCK and P15 for SWDIO. These route to Arduino header J2, A1 and A0. These can be fly-wired to Arduino header J4, D4 and D5. From there the signals connect to the KitProg3 SWD bridge. In addition, the debug macros (SETUP\_APP\_FOR\_DEBUG\_IF\_DEBUG\_ENABLED and BUSY\_WAIT\_TILL\_MANUAL\_CONTINUE\_IF\_DEBUG\_ENABLED) are placed in sparinit.c in code common to all applications for this device. Most applications for this device call bleprofile\_GPIOInit() in subsequent code, overwriting the SWD pin configuration. To use hardware debugging after the call to bleprofile\_GPIOInit(), place the debug macros in code after that call.
+   - CYW943012B2EVK-01: SWD signals are shared with D4 and D5.
+   - CYW920820M2EVB-01: The default setup uses P03 for SWDIO and P02 for SWDCK. Check the position of SW15 if using JLink with the DEBUG connector.
    - SWD hardware debugging is not supported on the following:
    >- CYW920721M2EVK-01
    >- CYW920835REF-RCU-01
    >- CYW920819REF-KB-01
    >- CYW9M2BASE-43012BT
-   >- CYW943012BTEVK-01
    >- CYBT-423054-EVAL
    >- CYBT-423060-EVAL
    >- CYBT-483056-EVAL
@@ -394,22 +393,22 @@ Note: this is a list of all features and profiles supported in BTSDK, but some A
 
 ## List of boards available for use with BTSDK
 
-- [CYW20819A1 chip](https://github.com/cypresssemiconductorco/20819A1)
-    - [CYW920819EVB-02](https://github.com/cypresssemiconductorco/TARGET_CYW920819EVB-02), [CYBT-213043-MESH](https://github.com/cypresssemiconductorco/TARGET_CYBT-213043-MESH), [CYBT-213043-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-213043-EVAL), [CYW920819REF-KB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920819REF-KB-01), [CYBT-223058-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-223058-EVAL), [CYBT-263065-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-263065-EVAL), [CYBT-273063-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-273063-EVAL)
-- [CYW20820A1 chip](https://github.com/cypresssemiconductorco/20820A1)
-    - [CYW920820EVB-02](https://github.com/cypresssemiconductorco/TARGET_CYW920820EVB-02), [CYW989820EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW989820EVB-01), [CYBT-243053-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-243053-EVAL), [CYBT-253059-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-253059-EVAL)
-- [CYW20721B2 chip](https://github.com/cypresssemiconductorco/20721B2)
-    - [CYW920721B2EVK-02](https://github.com/cypresssemiconductorco/TARGET_CYW920721B2EVK-02), [CYW920721M2EVK-01](https://github.com/cypresssemiconductorco/TARGET_CYW920721M2EVK-01), [CYW920721M2EVK-02](https://github.com/cypresssemiconductorco/TARGET_CYW920721M2EVK-02), [CYW920721M2EVB-03](https://github.com/Infineon/TARGET_CYW920721M2EVB-03), [CYBT-423060-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-423060-EVAL), [CYBT-483062-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-483062-EVAL), [CYBT-413061-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-413061-EVAL)
-- [CYW20719B2 chip](https://github.com/cypresssemiconductorco/20719B2)
-    - [CYW920719B2Q40EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920719B2Q40EVB-01), [CYBT-423054-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-423054-EVAL), [CYBT-413055-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-413055-EVAL), [CYBT-483056-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-483056-EVAL)
-- [CYW20706A2 chip](https://github.com/cypresssemiconductorco/20706A2)
-    - [CYW920706WCDEVAL](https://github.com/cypresssemiconductorco/TARGET_CYW920706WCDEVAL), [CYBT-353027-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-353027-EVAL), [CYBT-343026-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-343026-EVAL), [CYBT-333047-EVAL](https://github.com/Infineon/TARGET_CYBT-333047-EVAL)
-- [CYW20735B1 chip](https://github.com/cypresssemiconductorco/20735B1)
-    - [CYW920735Q60EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920735Q60EVB-01), [CYBT-343052-EVAL](https://github.com/cypresssemiconductorco/TARGET_CYBT-343052-EVAL)
-- [CYW20835B1 chip](https://github.com/cypresssemiconductorco/20835B1)
-    - [CYW920835REF-RCU-01](https://github.com/cypresssemiconductorco/TARGET_CYW920835REF-RCU-01), [CYW920835M2EVB-01](https://github.com/cypresssemiconductorco/TARGET_CYW920835M2EVB-01), [CYBLE-343072-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-343072-EVAL-M2B), [CYBLE-333074-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-333074-EVAL-M2B), [CYBLE-343072-MESH](https://github.com/Infineon/TARGET_CYBLE-343072-MESH)
-- [CYW43012C0 chip](https://github.com/cypresssemiconductorco/43012C0)
-    - [CYW9M2BASE-43012BT](https://github.com/cypresssemiconductorco/TARGET_CYW9M2BASE-43012BT), [CYW943012BTEVK-01](https://github.com/cypresssemiconductorco/TARGET_CYW943012BTEVK-01)
+- [CYW20819A1 chip](https://github.com/Infineon/20819A1)
+    - [CYW920819EVB-02](https://github.com/Infineon/TARGET_CYW920819EVB-02), [CYBT-213043-MESH](https://github.com/infineon/TARGET_CYBT-213043-MESH), [CYBT-213043-EVAL](https://github.com/infineon/TARGET_CYBT-213043-EVAL), [CYW920819REF-KB-01](https://github.com/infineon/TARGET_CYW920819REF-KB-01), [CYBT-223058-EVAL](https://github.com/infineon/TARGET_CYBT-223058-EVAL), [CYBT-263065-EVAL](https://github.com/infineon/TARGET_CYBT-263065-EVAL), [CYBT-273063-EVAL](https://github.com/infineon/TARGET_CYBT-273063-EVAL)
+- [CYW20820A1 chip](https://github.com/infineon/20820A1)
+    - [CYW920820EVB-02](https://github.com/infineon/TARGET_CYW920820EVB-02), [CYW989820EVB-01](https://github.com/infineon/TARGET_CYW989820EVB-01), [CYBT-243053-EVAL](https://github.com/infineon/TARGET_CYBT-243053-EVAL), [CYBT-253059-EVAL](https://github.com/infineon/TARGET_CYBT-253059-EVAL), [CYW920820M2EVB-01](https://github.com/Infineon/TARGET_CYW920820M2EVB-01)
+- [CYW20721B2 chip](https://github.com/infineon/20721B2)
+    - [CYW920721M2EVK-01](https://github.com/infineon/TARGET_CYW920721M2EVK-01), [CYW920721M2EVK-02](https://github.com/infineon/TARGET_CYW920721M2EVK-02), [CYW920721M2EVB-03](https://github.com/Infineon/TARGET_CYW920721M2EVB-03), [CYBT-423060-EVAL](https://github.com/infineon/TARGET_CYBT-423060-EVAL), [CYBT-483062-EVAL](https://github.com/infineon/TARGET_CYBT-483062-EVAL), [CYBT-413061-EVAL](https://github.com/infineon/TARGET_CYBT-413061-EVAL)
+- [CYW20719B2 chip](https://github.com/infineon/20719B2)
+    - [CYW920719B2Q40EVB-01](https://github.com/infineon/TARGET_CYW920719B2Q40EVB-01), [CYBT-423054-EVAL](https://github.com/infineon/TARGET_CYBT-423054-EVAL), [CYBT-413055-EVAL](https://github.com/infineon/TARGET_CYBT-413055-EVAL), [CYBT-483056-EVAL](https://github.com/infineon/TARGET_CYBT-483056-EVAL)
+- [CYW20706A2 chip](https://github.com/infineon/20706A2)
+    - [CYW920706WCDEVAL](https://github.com/infineon/TARGET_CYW920706WCDEVAL), [CYBT-353027-EVAL](https://github.com/infineon/TARGET_CYBT-353027-EVAL), [CYBT-343026-EVAL](https://github.com/infineon/TARGET_CYBT-343026-EVAL), [CYBT-333047-EVAL](https://github.com/Infineon/TARGET_CYBT-333047-EVAL)
+- [CYW20735B1 chip](https://github.com/infineon/20735B1)
+    - [CYW920735Q60EVB-01](https://github.com/infineon/TARGET_CYW920735Q60EVB-01), [CYBT-343052-EVAL](https://github.com/infineon/TARGET_CYBT-343052-EVAL)
+- [CYW20835B1 chip](https://github.com/infineon/20835B1)
+    - [CYW920835REF-RCU-01](https://github.com/infineon/TARGET_CYW920835REF-RCU-01), [CYW920835M2EVB-01](https://github.com/infineon/TARGET_CYW920835M2EVB-01), [CYBLE-343072-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-343072-EVAL-M2B), [CYBLE-333074-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-333074-EVAL-M2B), [CYBLE-343072-MESH](https://github.com/Infineon/TARGET_CYBLE-343072-MESH)
+- [CYW43012C0 chip](https://github.com/infineon/43012C0)
+    - [CYW9M2BASE-43012BT](https://github.com/Infineon/TARGET_CYW9M2BASE-43012BT), [CYW943012BTEVK-01](https://github.com/Infineon/TARGET_CYW943012BTEVK-01)
 - [CYW20736A1 chip](https://github.com/Infineon/20736A1)
     - [CYW920736M2EVB-01](https://github.com/Infineon/TARGET_CYW920736M2EVB-01)
 - [CYW30739A0 chip](https://github.com/Infineon/30739A0)
@@ -428,7 +427,7 @@ This folder contains the files that are needed to build the embedded Bluetooth&#
 
 * baselib: Files for chips supported by BTSDK. For example CYW20819, CYW20719, CYW20706, etc.
 
-* bsp: Files for BSPs (platforms) supported by BTSDK. For example CYW920819EVB-02, CYW920721B2EVK-02, CYW920706WCDEVAL etc.
+* bsp: Files for BSPs (platforms) supported by BTSDK. For example CYW920819EVB-02, CYW920706WCDEVAL etc.
 
 * btsdk-include: Common header files needed by all apps and libraries.
 
@@ -572,12 +571,12 @@ To create a custom pin configuration to be used by multiple applications using a
 
 To create a custom configuration to be used by a single application from an existing BSP that supports Device Configurator, perform the following steps:
 
-1. Create a folder COMPONENT\_(BSP)\_design\_modus in your application. For example COMPONENT\_CYW920721B2EVK-02\_design\_modus
+1. Create a folder COMPONENT\_(BSP)\_design\_modus in your application. For example COMPONENT\_CYW920721M2EVK-02\_design\_modus
 2. Copy the file design.modus from the reference BSP under mtb\_shared\wiced\_btsdk\dev-kit\bsp\ and place the file in this folder.
 3. In the application makefile, add the following two lines<br/>
    DISABLE\_COMPONENTS+=bsp\_design\_modus<br/>
    COMPONENTS+=(BSP)\_design\_modus<br/>
-   (for example COMPONENTS+=CYW920721B2EVK-02\_design\_modus)
+   (for example COMPONENTS+=CYW920721M2EVK-02\_design\_modus)
 4. Update design.modus for your custom pin configuration if needed using the **Device Configurator** link under **Configurators** in the Quick Panel.
 5. Building of the application will generate pin configuration source code under the GeneratedSource folder in your application.
 
@@ -590,8 +589,8 @@ The libraries needed by the app can be found in in the mtb\_shared\wiced\_btsdk\
 
 ## Documentation
 
-BTSDK API documentation is available [online](https://cypresssemiconductorco.github.io/btsdk-docs/BT-SDK/index.html)
+BTSDK API documentation is available [online](https://infineon.github.io/btsdk-docs/BT-SDK/index.html)
 
-Note: For offline viewing, git clone the [documentation repo](https://github.com/cypresssemiconductorco/btsdk-docs)
+Note: For offline viewing, git clone the [documentation repo](https://github.com/Infineon/btsdk-docs)
 
-BTSDK Technical Brief and Release Notes are available [online](https://community.cypress.com/community/software-forums/modustoolbox-bt-sdk)
+BTSDK Technical Brief and Release Notes are available [online](https://community.infineon.com/t5/Bluetooth-SDK/bd-p/ModusToolboxBluetoothSDK)

@@ -34,7 +34,7 @@
 /*
  * File name: low_power_208xx_ble.c
  *
- * Description: This file defines various functions to handle BLE related
+ * Description: This file defines various functions to handle Bluetooth LE related
  *              functionality as well as button callbacks.
  *
  */
@@ -310,7 +310,7 @@ wiced_bt_dev_status_t low_power_208xx_bt_management_callback(wiced_bt_management
         break;
     case BTM_PAIRING_IO_CAPABILITIES_BLE_REQUEST_EVT:
         /* Request for Pairing IO Capabilities (BLE) */
-        WICED_BT_TRACE("BLE Pairing IO Capabilities Request\r\n");
+        WICED_BT_TRACE("LE Pairing IO Capabilities Request\r\n");
         /* No IO Capabilities on this Platform */
         p_event_data->pairing_io_capabilities_ble_request.local_io_cap = BTM_IO_CAPABILITIES_NONE;
         p_event_data->pairing_io_capabilities_ble_request.oob_data = BTM_OOB_NONE;

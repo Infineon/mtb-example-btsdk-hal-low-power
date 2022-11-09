@@ -93,7 +93,7 @@ extern wiced_bt_dev_status_t  low_power_208xx_bt_management_callback(
 /*******************************************************************************
 * Function Name: void application_start(void)
 ********************************************************************************
-* Summary: Initialize transport configuration, register BLE
+* Summary: Initialize transport configuration, register LE
 *          management event callback and configure sleep.
 *
 * Parameters:

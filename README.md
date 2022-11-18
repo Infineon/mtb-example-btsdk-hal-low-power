@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 ## CYW208xx Low Power
 
-This example demonstrates low power modes on CYW20819, CYW20820 and CYW89820 using ModusToolbox&#8482;.
+This example demonstrates low power modes on CYW20819 and CYW20820 using ModusToolbox&#8482;.
 
 ### Requirements
 
@@ -9,7 +9,7 @@ This example demonstrates low power modes on CYW20819, CYW20820 and CYW89820 usi
 
 Programming Language: C
 
-Associated Parts: [CYW20819](https://www.infineon.com/dgdl/Infineon-CYW20819_Ultra_Low_Power_Bluetooth_LE_BR_EDR_Bluetooth_5.0_SoC-AdditionalTechnicalInformation-v07_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ee7dba070bf), [CYW20820](https://www.infineon.com/dgdl/Infineon-CYW20820_Ultra_Low_Power_Bluetooth_LE_BR_EDR_Bluetooth_5.0_SoC-AdditionalTechnicalInformation-v06_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0ee7e70770d1)
+Associated Parts: [CYW20819](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-bluetooth-le-bluetooth-multiprotocol/airoc-bluetooth-le-bluetooth/cyw20819/), [CYW20820](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-bluetooth-le-bluetooth-multiprotocol/airoc-bluetooth-le-bluetooth/cyw20820/)
 
 ### Supported Kits
 * [CYW920819EVB-02 Evaluation Kit](https://www.infineon.com/cms/en/product/evaluation-boards/cyw920819evb-02/)
@@ -23,15 +23,13 @@ If you want to use the application for a kit not listed here, you may need to up
 
 ### Hardware Setup
 
-*Boilerplate*
-
-This example uses the kit’s default configuration. Refer to the kit guide to ensure the kit is configured correctly.
+This example uses the kit's default configuration. Refer to the kit guide to ensure the kit is configured correctly.
 
 ### Software Setup
 
-This code example consists of two parts: a client and a server. For the client, download and install the CySmart app for [iOS](https://itunes.apple.com/us/app/cysmart/id928939093?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.cypress.cysmart&hl=en). You can also use the [CySmart Host Emulation Tool](https://www.infineon.com/cms/en/design-support/tools/utilities/wireless-connectivity/cysmart-bluetooth-le-test-and-debug-tool/) Windows PC application if you have access to the [CY5677 CySmart LE 4.2 USB Dongle](https://www.infineon.com/cms/en/product/evaluation-boards/cy5677/).
+This code example consists of two parts: a client and a server. For the client, download and install the LightBlue Connect App for [iOS](https://apps.apple.com/us/app/lightblue/id557428110) or [Android](https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&gl=US).
 
-Scan the following QR codes from your mobile phone to download the CySmart app.
+Scan the following QR codes from your mobile phone to download the LightBlue Connect App.
 
 ![AppQR](./images/QR.PNG)
 
@@ -41,8 +39,6 @@ This example requires no additional software or tools.
 
 ### Using the Code Example
 
-If you are unfamiliar with this process, see [KBA225201](https://community.infineon.com/t5/Knowledge-Base-Articles/Importing-Code-Example-into-ModusToolbox-IDE-KBA225201/ta-p/250475) for all the details.
-
 #### In the ModusToolbox&#8482; IDE
 
 1. Click the **New Application** link in the Quick Panel (or, use **File > New > ModusToolbox&#8482; Application**).
@@ -50,11 +46,11 @@ If you are unfamiliar with this process, see [KBA225201](https://community.infin
 3. In the **Starter Application** window, choose the example.
 4. Click **Next** and complete the application creation process.
 
- If you are unfamiliar with this process, see [KBA225201](https://community.infineon.com/t5/Knowledge-Base-Articles/Importing-Code-Example-into-ModusToolbox-IDE-KBA225201/ta-p/250475) for all the details.
+ If you are unfamiliar with this process, see [ModusToolbox&#8482; Quick Start Guide](https://www.infineon.com/dgdl/Infineon-ModusToolbox_3.0_Eclipse_IDE_QSG-GettingStarted-v01_00-EN.pdf?fileId=8ac78c8c8386267f0183a8e969e95911) for all the details.
 
 #### In Command Line Tools
 
-Ensure that the development environment is set up correctly. See KBAnnnnn for details.
+Ensure that the development environment is set up correctly.
 
 1. Download and unzip this repository onto your local machine, or clone the repository.
 2. Open the Cygwin terminal and navigate to the application folder.
@@ -101,14 +97,27 @@ Figure 3. Start Advertisement Log
 
 ![ADV](./images/ADV.png)
 
-8. Do the following to test a connection using the CySmart mobile app:
-    1. Turn ON Bluetooth&#174; on your Android or iOS device.
-    2. Launch the CySmart app.
-    3. Swipe down on the CySmart app home screen to start scanning for LE Peripherals; your device appears in the CySmart app home screen. Select your device to establish an LE connection. Once the device is connected, you can read the current numbers from the ammeters. These are the current in ePDS mode with a connection at a connection interval of 100 ms.
-    4. Select the GATT DB from the carousel view.
-    5. Select Battery Service and then select Characteristics.
-    6. Select Notify. CYW920819EVB-02 will start sending GATT notifications to the mobile device. Note the current readings on the ammeters. These are the current in ePDS mode with a connection at a connection interval of 100 ms and notifications being sent every 5 seconds.
-    7. Disconnect the Bluetooth&#174; connection by pressing SW3 on the kit or by backing out from the mobile app. The device will enter HID-Off mode for 10 seconds. Note the current numbers. These are the current numbers in HID-Off mode.
+### Test the connection using the LightBlue Connect mobile app
+
+1. Turn ON Bluetooth&reg; on your Android or iOS device.
+
+2. Launch the LightBlue Connect app.
+
+3. Do the following on the LightBlue Connect app:
+
+   1. Swipe down on the LightBlue Connect app home screen to start scanning for **Bluetooth&reg; Low Power**. Your device appears in the LightBlue Connect app home screen.
+
+   2. Select your device to establish a Bluetooth&reg; LE connection.
+
+   3. Once the device is connected, read the current numbers from the ammeters. These are the currents in ePDS mode with a connection at a connection interval of 100 ms.
+
+   4. Select the **Battery level** characteristic under the **Battery service**.
+
+   5. Select **Subscribe**. CYW20819 will start sending GATT notifications to the mobile device.
+
+   6. Note the current readings on the ammeters. These are the current in ePDS mode with a connection at a connection interval of 100 ms and notifications being sent every 5 seconds.
+
+   7. Disconnect the Bluetooth&reg; connection by pressing SW3 on the kit or by backing out from the mobile app. The device will enter HID-Off mode.
 
 Figure 4. Connection, Pairing, and Connection Parameters Update Messages
 
@@ -118,36 +127,29 @@ Figure 5. Disconnection, HID-Off, and Restart Trace Messages
 
 ![Disconnection](./images/disconnection.png)
 
-9. Do the following to test using the CySmart desktop application on a PC:
-    1. Open the CySmart desktop application and connect to the CySmart CY5677 dongle (Central device). Refer to the CySmart User Guide on how to use this application.
-    2. Scan and Connect to 'low_power_208xx' device. When asked for a connection parameter update, accept it. After the connection is established, you can measure the current values. These are the current numbers in ePDS mode with connection at 100 ms interval.
-    3. Go to the device tab and click Discover all attributes.
-    4. Click on Enable all Notifications. The device will start sending notifications every 5 seconds. Note the current readings on the ammeters. These are the current in ePDS mode with a connection at a connection interval of 100 ms and notifications being sent every 5 seconds.
-    5. Click Disconnect to disconnect from the Central device. The device will enter HID-Off mode for 10 seconds. Note the current numbers. These are the current numbers in HID-Off mode.
-
 ### Design and Implementation
 
 This code example implements a GATT Server and GAP Peripheral role on CYW920819EVB-02. Once the device is powered on, it boots up, configures sleep, initializes the Bluetooth&#174; stack, registers a button interrupt and GATT database, and then enters ePDS mode.
 You need to press switch SW3 on the kit to start low-duty advertisement. The device is still in ePDS mode. You can now connect to the device using a GAP Central device. Upon connection, the device will request connection parameters to be updated (specifically, the connection interval to 100 ms). If the request is accepted, the connection interval changes to 100 ms. The device remains in ePDS mode and maintains the connection by sending empty packets. The GAP Central device can now discover all attributes and enable GATT notifications. The peripheral will start sending a dummy battery level value every 5 seconds.
 The GATT Server implements a Battery Service with a Battery Level characteristic. This characteristic is readable and notifiable.
-The application code and the Bluetooth&#174; stack runs on the Arm&#174 Cortex&#174-M4 core of the CYW20819 SoC. The application-level source files for this code example are listed in Table 1.
+The application code and the Bluetooth&#174; stack runs on the Arm&#174; Cortex&#174;-M4 core of the CYW20819 SoC. The application-level source files for this code example are listed in Table 1.
 
 Table 1. Code Example File Structure
-|**File Name**|**Comments**|
-|-------------|------------|
-|low_power_20819.c|Contains the application_start() function, which is the entry point for execution of the user application code after device startup. It also has the sleep callback function used by the PMU. The contents in this file can be referenced to implement low-power modes in other applications.|
-|app_bt_cfg.c, app_bt_cfg.h|These files contain the runtime Bluetooth&#174; stack configuration parameters such as device name and advertisement/connection settings.|
-|cycfg_bt.h, cycfg_gatt_db.c, cycfg_gatt_db.h|These files reside in the GeneratedSource folder under the application folder. They contain the GATT database information generated using the Bluetooth&#174; Configurator tool.|
-|low_power_20819_ble.c|This file contains the Bluetooth&#174; events callback function along with other functions to service Bluetooth&#174; events. It also contains the button callback function.|
 
-###Application Flow
+| File Name   | Comments   |
+|-------------|------------|
+| low_power_208xx.c | Contains the application_start() function, which is the entry point for execution of the user application code after device startup. It also has the sleep callback function used by the PMU. The contents in this file can be referenced to implement low-power modes in other applications. |
+| app_bt_cfg.c, app_bt_cfg.h |These files contain the runtime Bluetooth&#174; stack configuration parameters such as device name and advertisement/connection settings. |
+| cycfg_bt.h, cycfg_gatt_db.c, cycfg_gatt_db.h |These files reside in the GeneratedSource folder under the application folder. They contain the GATT database information generated using the Bluetooth&#174; Configurator tool. |
+| low_power_208xx_ble.c |This file contains the Bluetooth&#174; events callback function along with other functions to service Bluetooth&#174; events. It also contains the button callback function. |
+
+### Application Flow
 
 The following diagrams show the flow of the application code.
-    	Figure 6 shows the flow of the application when it boots up.
-    	Figure 7 shows the flow of the button callback.
-    	Figure 8 shows the flow of Bluetooth&#174; stack management event callbacks.
-    	Figure 9 shows the flow of GATT event callbacks.
-    	Figure 10 shows the tree of the functions that are called on the Bluetooth&#174; and GATT event callbacks from the stack.
+
+* Figure 6 shows the flow of the application when it boots up.
+* Figure 7 shows the flow of the button callback.
+* Figure 8 shows the flow of Bluetooth&#174; stack management event callbacks.
 
 Figure 6. Application Flow After Bootup
 
@@ -161,24 +163,16 @@ Figure 8. Bluetooth&#174; Stack Management Callback Flow
 
 ![BTStack](./images/BTStack.png)
 
-Figure 9. GATT Event Callback Flow
-
-![EventCB](./images/EventCB.png)
-
-Figure 10. Bluetooth&#174; Management and GATT Events Function Call Tree
-
-![GATT](./images/GATT.png)
-
-###Current Measurements
+### Current Measurements
 
 The instantaneous current consumed by the device is not a steady-state value, but varies depending on the state of the chip that dynamically changes with power mode transitions, making it practically impossible to measure each individual instantaneous current with a handheld multimeter because the duration of these current bursts is very small.
-Therefore, you should use a multimeter that provides the option to set the ”aperture” of the measurement. The aperture is the period ”T” during which the multimeter measures the instantaneous currents, integrates them, and then displays the average current for the period ”T”. For accurate measurements, the aperture of the multimeter should be set to be the same as the advertising or the connection interval. The following tables gives the current values for VBAT and VDDIO in various scenarios. Note that the current is averaged over 10 second intervals.
+Therefore, you should use a multimeter that provides the option to set the "aperture" of the measurement. The aperture is the period "T" during which the multimeter measures the instantaneous currents, integrates them, and then displays the average current for the period "T". For accurate measurements, the aperture of the multimeter should be set to be the same as the advertising or the connection interval. The following tables gives the current values for VBAT and VDDIO in various scenarios. Note that the current is averaged over 10 second intervals.
 
 Table 2. CYW20819 Current in Different Modes
 
 | State                                   | ePDS Enabled VDDIO | ePDS Enabled VBAT | ePDS Disabled VDDIO | ePDS Disabled VBAT |
 |-----------------------------------------|--------------------|-------------------|---------------------|--------------------|
-| No Bluetooth&#174; activity                   | 2.1 uA             | 7.7 uA            | 47.9 uA             | 0.97 mA            |
+| No Bluetooth&#174; activity             | 2.1 uA             | 7.7 uA            | 47.9 uA             | 0.97 mA            |
 | ADV (2.56 seconds interval)             | 2.3 uA             | 26.1 uA           | 47.9 uA             | 0.98 uA            |
 | Connection (100 ms connection interval) | 3.2 uA             | 147.2 uA          | 47.9 uA             | 1.02 mA            |
 | Notifications (5 s interval)            | 3.3 uA             | 148.3 uA          | 47.9 uA             | 1.02 mA            |
@@ -211,10 +205,10 @@ Table 5. CYW20820 Current in Different Modes
 
 | State                                   | ePDS Enabled VDDIO | ePDS Enabled VBAT | ePDS Disabled VDDIO | ePDS Disabled VBAT |
 |-----------------------------------------|--------------------|-------------------|---------------------|--------------------|
-| No Bluetooth&#174; activity                   | 2.45 uA             | 6.21 uA            | 48.62 uA             | 0.98 mA            |
-| ADV (2.56 seconds interval)             | 2.65 uA             | 20.65 uA           | 45.08 uA             | 0.99 uA            |
-| Connection (100 ms connection interval) | 3.89 uA             | 137.8 uA          | 45.11 uA             | 1.02 mA            |
-| Notifications (5 s interval)            | 4.15 uA             | 142.54 uA          | 45.23 uA             | 1.02 mA            |
+| No Bluetooth&#174; activity             | 2.45 uA            | 6.21 uA           | 48.62 uA            | 0.98 mA            |
+| ADV (2.56 seconds interval)             | 2.65 uA            | 20.65 uA          | 45.08 uA            | 0.99 uA            |
+| Connection (100 ms connection interval) | 3.89 uA            | 137.8 uA          | 45.11 uA            | 1.02 mA            |
+| Notifications (5 s interval)            | 4.15 uA            | 142.54 uA         | 45.23 uA            | 1.02 mA            |
 
 Table 6. CYW20819 Current in HID-Off Mode
 
@@ -242,21 +236,21 @@ Table 7. CYW20820 Current in Different Connection Intervals
 
 Note that these current values also include some leakage current on the board because some GPIOs connected to the on-board components draw current. For accurate current numbers, see the device datasheet.
 
-####Resources and Settings
-This example uses the default device configurator settings i.e., when this example is imported to ModusToolbox&#8482;, the IDE creates the file design.modus file that is used for design configuration with default settings for the kit. Note that in the design.modus file, the SPI and I2C modules are enabled, but because these are not used in the application, they will not cause any current leakage. It also provides the GATT database files so you don’t have to generate the files.
+#### Resources and Settings
+This example uses the default device configurator settings i.e., when this example is imported to ModusToolbox&#8482;, the IDE creates the file design.modus file that is used for design configuration with default settings for the kit. Note that in the design.modus file, the SPI and I2C modules are enabled, but because these are not used in the application, they will not cause any current leakage. It also provides the GATT database files so you don't have to generate the files.
 
-###Reusing This Example
+### Reusing This Example
 This example is designed in a way so that you can use the low-power functions from this example in your own example with minimal changes.
 
 ### Related Resources
 
 | Application Notes |  |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| [AN225684 ](https://www.infineon.com/dgdl/Infineon-AN225684_Getting_Started_with_CYW20819-ApplicationNotes-v02_00-EN.PDF?fileId=8ac78c8c7cdc391c017d0d3674d1669d) – Getting Started with CYW20819 | Describes the CYW20819 device and demonstrates how to build your first ModusToolbox&#8482; project |
+| [AN225684 ](https://www.infineon.com/dgdl/Infineon-AN225684_Getting_Started_with_CYW20819-ApplicationNotes-v02_00-EN.PDF?fileId=8ac78c8c7cdc391c017d0d3674d1669d) - Getting Started with CYW20819 | Describes the CYW20819 device and demonstrates how to build your first ModusToolbox&#8482; project |
 
 | Code Examples |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
-| Visit the [Infineon GitHub](https://github.com/Infineon/Code-Examples-for-ModusToolbox-Software) repo for a comprehensive collection of code examples using ModusToolbox&#8482;|
+| Visit the [Infineon GitHub](https://github.com/Infineon/Code-Examples-for-ModusToolbox-Software) repo for a comprehensive collection of code examples using ModusToolbox&#8482; |
 
 | Development Kit Documentation |
 |--------------------------------------------------------------------------------------------------------------------------------------------|

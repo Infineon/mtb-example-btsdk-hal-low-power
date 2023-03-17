@@ -11,7 +11,7 @@ Programming Language: C
 
 Associated Parts: [CYW20819](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-bluetooth-le-bluetooth-multiprotocol/airoc-bluetooth-le-bluetooth/cyw20819/), [CYW20820](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-bluetooth-le-bluetooth-multiprotocol/airoc-bluetooth-le-bluetooth/cyw20820/)
 
-### Supported Kits
+### Supported Kits & Documentation
 * [CYW920819EVB-02 Evaluation Kit](https://www.infineon.com/cms/en/product/evaluation-boards/cyw920819evb-02/)
 * [CYW920820EVB-02 Evaluation kit]( https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-bluetooth-le-bluetooth-multiprotocol/)<br/>
 
@@ -27,9 +27,9 @@ This example uses the kit's default configuration. Refer to the kit guide to ens
 
 ### Software Setup
 
-This code example consists of two parts: a client and a server. For the client, download and install the LightBlue Connect App for [iOS](https://apps.apple.com/us/app/lightblue/id557428110) or [Android](https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&gl=US).
+This code example consists of two parts: a client and a server. For the client, download and install the LightBlue App for [iOS](https://apps.apple.com/us/app/lightblue/id557428110) or [Android](https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&gl=US).
 
-Scan the following QR codes from your mobile phone to download the LightBlue Connect App.
+Scan the following QR codes from your mobile phone to download the LightBlue App.
 
 ![AppQR](./images/QR.PNG)
 
@@ -68,7 +68,7 @@ Figure 1. CYW920819EVB-02 Jumpers to measure Current
 
 3. Remove jumpers J14 and J18 to disable unused peripherals on the evaluation kit.
 
-4. The USB Serial interface on the kit provides access to the two UART interfaces of the CYW20819 device - "WICED HCI UART", and "WICED Peripheral UART" (PUART). The HCI UART is used only for downloading the application code in this code example and the PUART is used for printing the Bluetooth&#174; stack and application trace messages. Open your terminal software and select the PUART COM port, with a baud rate setting of 115200 bps. If you want to disable the trace messages, then comment out the following line in low_power_208xx.c:
+4. The USB Serial interface on the kit provides access to the two UART interfaces of the device - "WICED HCI UART", and "WICED Peripheral UART" (PUART). The HCI UART is used only for downloading the application code in this code example and the PUART is used for printing the Bluetooth&#174; stack and application trace messages. Open your terminal software and select the PUART COM port, with a baud rate setting of 115200 bps. If you want to disable the trace messages, then comment out the following line in low_power_208xx.c:
 *wiced_set_debug_uart( WICED_ROUTE_DEBUG_TO_PUART );*
 
 5. Program the board.
@@ -97,15 +97,15 @@ Figure 3. Start Advertisement Log
 
 ![ADV](./images/ADV.png)
 
-### Test the connection using the LightBlue Connect mobile app
+### Test the connection using the LightBlue mobile app
 
 1. Turn ON Bluetooth&reg; on your Android or iOS device.
 
-2. Launch the LightBlue Connect app.
+2. Launch the LightBlue app.
 
-3. Do the following on the LightBlue Connect app:
+3. Do the following on the LightBlue app:
 
-   1. Swipe down on the LightBlue Connect app home screen to start scanning for **Bluetooth&reg; Low Power**. Your device appears in the LightBlue Connect app home screen.
+   1. Swipe down on the LightBlue app home screen to start scanning for **low Power**. Your device appears in the LightBlue app home screen.
 
    2. Select your device to establish a Bluetooth&reg; LE connection.
 
@@ -113,7 +113,7 @@ Figure 3. Start Advertisement Log
 
    4. Select the **Battery level** characteristic under the **Battery service**.
 
-   5. Select **Subscribe**. CYW20819 will start sending GATT notifications to the mobile device.
+   5. Select **select Subscribe (for Android) / select Listen for notifications (for iOS)**. The device will start sending GATT notifications to the LightBlue app.
 
    6. Note the current readings on the ammeters. These are the current in ePDS mode with a connection at a connection interval of 100 ms and notifications being sent every 5 seconds.
 
@@ -129,10 +129,10 @@ Figure 5. Disconnection, HID-Off, and Restart Trace Messages
 
 ### Design and Implementation
 
-This code example implements a GATT Server and GAP Peripheral role on CYW920819EVB-02. Once the device is powered on, it boots up, configures sleep, initializes the Bluetooth&#174; stack, registers a button interrupt and GATT database, and then enters ePDS mode.
+This code example implements a GATT Server and GAP Peripheral role on CYW920819EVB-02/CYW920820EVB-02. Once the device is powered on, it boots up, configures sleep, initializes the Bluetooth&#174; stack, registers a button interrupt and GATT database, and then enters ePDS mode.
 You need to press switch SW3 on the kit to start low-duty advertisement. The device is still in ePDS mode. You can now connect to the device using a GAP Central device. Upon connection, the device will request connection parameters to be updated (specifically, the connection interval to 100 ms). If the request is accepted, the connection interval changes to 100 ms. The device remains in ePDS mode and maintains the connection by sending empty packets. The GAP Central device can now discover all attributes and enable GATT notifications. The peripheral will start sending a dummy battery level value every 5 seconds.
 The GATT Server implements a Battery Service with a Battery Level characteristic. This characteristic is readable and notifiable.
-The application code and the Bluetooth&#174; stack runs on the Arm&#174; Cortex&#174;-M4 core of the CYW20819 SoC. The application-level source files for this code example are listed in Table 1.
+The application code and the Bluetooth&#174; stack runs on the Arm&#174; Cortex&#174;-M4 core of the SoC. The application-level source files for this code example are listed in Table 1.
 
 Table 1. Code Example File Structure
 
@@ -246,15 +246,11 @@ This example is designed in a way so that you can use the low-power functions fr
 
 | Application Notes |  |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| [AN225684 ](https://www.infineon.com/dgdl/Infineon-AN225684_Getting_Started_with_CYW20819-ApplicationNotes-v02_00-EN.PDF?fileId=8ac78c8c7cdc391c017d0d3674d1669d) - Getting Started with CYW20819 | Describes the CYW20819 device and demonstrates how to build your first ModusToolbox&#8482; project |
+| [AN225684 ](https://www.infineon.com/dgdl/Infineon-AN225684_Getting_Started_with_CYW20819-ApplicationNotes-v02_00-EN.PDF?fileId=8ac78c8c7cdc391c017d0d3674d1669d) - Getting started with AIROC&#8482; CYW20819/20/35 Bluetooth&reg; & Bluetooth&reg; LE | Describes the CYW20819/CYW20820 devices and demonstrates how to build your first ModusToolbox&#8482; project |
 
 | Code Examples |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
 | Visit the [Infineon GitHub](https://github.com/Infineon/Code-Examples-for-ModusToolbox-Software) repo for a comprehensive collection of code examples using ModusToolbox&#8482; |
-
-| Development Kit Documentation |
-|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [CYW20819EVB-02 Evaluation Kit](https://www.infineon.com/cms/en/product/evaluation-boards/cyw920819evb-02/) |
 
 | Tools Documentation |  |
 |------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
@@ -282,7 +278,7 @@ Application settings below are common for all BTSDK applications and can be conf
 > Set to the UART port you want to use to download the application. For example 'COM6' on Windows or '/dev/ttyWICED\_HCI\_UART0' on Linux or '/dev/tty.usbserial-000154' on macOS. By default, the SDK will auto-detect the port.
 
 ##### ENABLE_DEBUG
-> For HW debugging, configure ENABLE\_DEBUG=1. See the document [AIROC&#8482;-Hardware-Debugging](https://github.com/Infineon/btsdk-docs/blob/master/docs/BT-SDK/WICED-Hardware-Debugging.pdf) for more information. This setting configures GPIO for SWD.<br>
+> For HW debugging, configure ENABLE\_DEBUG=1. See the document [AIROC&#8482;-Hardware-Debugging](https://infineon.github.io/btsdk-docs/BT-SDK/AIROC-Hardware-Debugging.pdf) for more information. This setting configures GPIO for SWD.<br>
 >
    - CYW920819EVB-02/CYW920820EVB-02: SWD signals are shared with D4 and D5, see SW9 in schematics.
    - CYBT-213043-MESH/CYBT-213043-EVAL/CYBT-253059-EVAL: SWD signals are routed to P12=SWDCK and P13=SWDIO. Use expansion connectors to connect VDD, GND, SWDCK, and SWDIO to your SWD Debugger probe.
@@ -298,12 +294,11 @@ Application settings below are common for all BTSDK applications and can be conf
    - CYW920736M2EVB-01: SWD hardware debugging requires fly-wire connections. The only option is using P14 for SWDCK and P15 for SWDIO. These route to Arduino header J2, A1 and A0. These can be fly-wired to Arduino header J4, D4 and D5. From there the signals connect to the KitProg3 SWD bridge. In addition, the debug macros (SETUP\_APP\_FOR\_DEBUG\_IF\_DEBUG\_ENABLED and BUSY\_WAIT\_TILL\_MANUAL\_CONTINUE\_IF\_DEBUG\_ENABLED) are placed in sparinit.c in code common to all applications for this device. Most applications for this device call bleprofile\_GPIOInit() in subsequent code, overwriting the SWD pin configuration. To use hardware debugging after the call to bleprofile\_GPIOInit(), place the debug macros in code after that call.
    - CYW943012B2EVK-01: SWD signals are shared with D4 and D5.
    - CYW920820M2EVB-01 & CYW920819M2EVB-01: The default setup uses P03 for SWDIO and P02 for SWDCK. Check the position of SW15 if using JLink with the DEBUG connector.
-   - CYW989820M2EVB-01: SWD hardware debugging requires fly-wire connections to use P12 for SWDIO and P14 for SWDCK. First set SW8 switch to position 1, and then P12 / RSVD_3 can be used for SWDIO. And fly-wire P14 / ARD_D8 on J3.10 to J12.4 to connect SWDCK on RSVD_4 on J12.4.
+   - CYW989820M2EVB-01: SWD hardware debugging requires a fly-wire connection to use P14 for SWDIO. P2 is connected directly to SWDCK / ARD_D4. Fly-wire P14 / ARD_D8 on J3.10 to J4.3 / ARD_D5 to connect SWDIO.
 
    - SWD hardware debugging is not supported on the following:
    >- CYW920721M2EVK-01
    >- CYW920835REF-RCU-01
-   >- CYW920819REF-KB-01
    >- CYW9M2BASE-43012BT
    >- CYBT-423054-EVAL
    >- CYBT-423060-EVAL
@@ -388,18 +383,18 @@ Note: this is a list of all features and profiles supported in BTSDK, but some A
 ## List of boards available for use with BTSDK
 
 - [CYW20819A1 chip](https://github.com/Infineon/20819A1)
-    - [CYW920819EVB-02](https://github.com/Infineon/TARGET_CYW920819EVB-02), [CYW920819M2EVB-01](https://github.com/Infineon/TARGET_CYW920819M2EVB-01), [CYBT-213043-MESH](https://github.com/infineon/TARGET_CYBT-213043-MESH), [CYBT-213043-EVAL](https://github.com/infineon/TARGET_CYBT-213043-EVAL), [CYW920819REF-KB-01](https://github.com/infineon/TARGET_CYW920819REF-KB-01), [CYBT-223058-EVAL](https://github.com/infineon/TARGET_CYBT-223058-EVAL), [CYBT-263065-EVAL](https://github.com/infineon/TARGET_CYBT-263065-EVAL), [CYBT-273063-EVAL](https://github.com/infineon/TARGET_CYBT-273063-EVAL)
-- [CYW20820A1 chip](https://github.com/infineon/20820A1)
-    - [CYW920820EVB-02](https://github.com/infineon/TARGET_CYW920820EVB-02), [CYW989820M2EVB-01](https://github.com/infineon/TARGET_CYW989820M2EVB-01), [CYW989820EVB-01](https://github.com/infineon/TARGET_CYW989820EVB-01), [CYBT-243053-EVAL](https://github.com/infineon/TARGET_CYBT-243053-EVAL), [CYBT-253059-EVAL](https://github.com/infineon/TARGET_CYBT-253059-EVAL), [CYW920820M2EVB-01](https://github.com/Infineon/TARGET_CYW920820M2EVB-01)
-- [CYW20721B2 chip](https://github.com/infineon/20721B2)
-    - [CYW920721M2EVK-01](https://github.com/infineon/TARGET_CYW920721M2EVK-01), [CYW920721M2EVK-02](https://github.com/infineon/TARGET_CYW920721M2EVK-02), [CYW920721M2EVB-03](https://github.com/Infineon/TARGET_CYW920721M2EVB-03), [CYBT-423060-EVAL](https://github.com/infineon/TARGET_CYBT-423060-EVAL), [CYBT-483062-EVAL](https://github.com/infineon/TARGET_CYBT-483062-EVAL), [CYBT-413061-EVAL](https://github.com/infineon/TARGET_CYBT-413061-EVAL)
-- [CYW20719B2 chip](https://github.com/infineon/20719B2)
-    - [CYW920719B2Q40EVB-01](https://github.com/infineon/TARGET_CYW920719B2Q40EVB-01), [CYBT-423054-EVAL](https://github.com/infineon/TARGET_CYBT-423054-EVAL), [CYBT-413055-EVAL](https://github.com/infineon/TARGET_CYBT-413055-EVAL), [CYBT-483056-EVAL](https://github.com/infineon/TARGET_CYBT-483056-EVAL)
-- [CYW20706A2 chip](https://github.com/infineon/20706A2)
-    - [CYW920706WCDEVAL](https://github.com/infineon/TARGET_CYW920706WCDEVAL), [CYBT-353027-EVAL](https://github.com/infineon/TARGET_CYBT-353027-EVAL), [CYBT-343026-EVAL](https://github.com/infineon/TARGET_CYBT-343026-EVAL), [CYBT-333047-EVAL](https://github.com/Infineon/TARGET_CYBT-333047-EVAL)
-- [CYW20835B1 chip](https://github.com/infineon/20835B1)
-    - [CYW920835REF-RCU-01](https://github.com/infineon/TARGET_CYW920835REF-RCU-01), [CYW920835M2EVB-01](https://github.com/infineon/TARGET_CYW920835M2EVB-01), [CYBLE-343072-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-343072-EVAL-M2B), [CYBLE-333074-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-333074-EVAL-M2B), [CYBLE-343072-MESH](https://github.com/Infineon/TARGET_CYBLE-343072-MESH)
-- [CYW43012C0 chip](https://github.com/infineon/43012C0)
+    - [CYW920819EVB-02](https://github.com/Infineon/TARGET_CYW920819EVB-02), [CYW920819M2EVB-01](https://github.com/Infineon/TARGET_CYW920819M2EVB-01), [CYBT-213043-MESH](https://github.com/Infineon/TARGET_CYBT-213043-MESH), [CYBT-213043-EVAL](https://github.com/Infineon/TARGET_CYBT-213043-EVAL), [CYBT-223058-EVAL](https://github.com/Infineon/TARGET_CYBT-223058-EVAL), [CYBT-263065-EVAL](https://github.com/Infineon/TARGET_CYBT-263065-EVAL), [CYBT-273063-EVAL](https://github.com/Infineon/TARGET_CYBT-273063-EVAL)
+- [CYW20820A1 chip](https://github.com/Infineon/20820A1)
+    - [CYW920820EVB-02](https://github.com/Infineon/TARGET_CYW920820EVB-02), [CYW989820M2EVB-01](https://github.com/Infineon/TARGET_CYW989820M2EVB-01), [CYW989820EVB-01](https://github.com/Infineon/TARGET_CYW989820EVB-01), [CYBT-243053-EVAL](https://github.com/Infineon/TARGET_CYBT-243053-EVAL), [CYBT-253059-EVAL](https://github.com/Infineon/TARGET_CYBT-253059-EVAL), [CYW920820M2EVB-01](https://github.com/Infineon/TARGET_CYW920820M2EVB-01)
+- [CYW20721B2 chip](https://github.com/Infineon/20721B2)
+    - [CYW920721M2EVK-01](https://github.com/Infineon/TARGET_CYW920721M2EVK-01), [CYW920721M2EVK-02](https://github.com/Infineon/TARGET_CYW920721M2EVK-02), [CYW920721M2EVB-03](https://github.com/Infineon/TARGET_CYW920721M2EVB-03), [CYBT-423060-EVAL](https://github.com/Infineon/TARGET_CYBT-423060-EVAL), [CYBT-483062-EVAL](https://github.com/Infineon/TARGET_CYBT-483062-EVAL), [CYBT-413061-EVAL](https://github.com/Infineon/TARGET_CYBT-413061-EVAL)
+- [CYW20719B2 chip](https://github.com/Infineon/20719B2)
+    - [CYW920719B2Q40EVB-01](https://github.com/Infineon/TARGET_CYW920719B2Q40EVB-01), [CYBT-423054-EVAL](https://github.com/Infineon/TARGET_CYBT-423054-EVAL), [CYBT-413055-EVAL](https://github.com/Infineon/TARGET_CYBT-413055-EVAL), [CYBT-483056-EVAL](https://github.com/Infineon/TARGET_CYBT-483056-EVAL)
+- [CYW20706A2 chip](https://github.com/Infineon/20706A2)
+    - [CYW920706WCDEVAL](https://github.com/Infineon/TARGET_CYW920706WCDEVAL), [CYBT-353027-EVAL](https://github.com/Infineon/TARGET_CYBT-353027-EVAL), [CYBT-343026-EVAL](https://github.com/Infineon/TARGET_CYBT-343026-EVAL), [CYBT-333047-EVAL](https://github.com/Infineon/TARGET_CYBT-333047-EVAL)
+- [CYW20835B1 chip](https://github.com/Infineon/20835B1)
+    - [CYW920835REF-RCU-01](https://github.com/Infineon/TARGET_CYW920835REF-RCU-01), [CYW920835M2EVB-01](https://github.com/Infineon/TARGET_CYW920835M2EVB-01), [CYBLE-343072-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-343072-EVAL-M2B), [CYBLE-333074-EVAL-M2B](https://github.com/Infineon/TARGET_CYBLE-333074-EVAL-M2B), [CYBLE-343072-MESH](https://github.com/Infineon/TARGET_CYBLE-343072-MESH)
+- [CYW43012C0 chip](https://github.com/Infineon/43012C0)
     - [CYW9M2BASE-43012BT](https://github.com/Infineon/TARGET_CYW9M2BASE-43012BT), [CYW943012BTEVK-01](https://github.com/Infineon/TARGET_CYW943012BTEVK-01)
 - [CYW20736A1 chip](https://github.com/Infineon/20736A1)
     - [CYW920736M2EVB-01](https://github.com/Infineon/TARGET_CYW920736M2EVB-01)
@@ -516,7 +511,7 @@ To view application traces, there are 2 methods available. Note that the
 application needs to configure the tracing options.<br>
 
 1. "WICED Peripheral UART" - Open this port on your computer using a serial port
-utility such as Tera Term or PuTTY (usually using 115200 baud rate for non-Mesh apps, and 921600 for Mesh apps).<br>
+utility such as TeraTerm or PuTTY (usually using 115200 baud rate for non-Mesh apps, and 921600 for Mesh apps).<br>
 2. "WICED HCI UART" - Open this port on your computer using the Client Control
 application mentioned above (usually using 3M baud rate). Then run the BTSpy
 utility mentioned above.

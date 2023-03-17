@@ -28,9 +28,9 @@
                                         <Field>
                                             <FieldProperties>
                                                 <Property id="Name" value="Name"/>
-                                                <Property id="Value" value="low power 20819"/>
+                                                <Property id="Value" value="low power"/>
                                                 <Property id="Format" value="f_utf8s"/>
-                                                <Property id="ByteLength" value="15"/>
+                                                <Property id="ByteLength" value="9"/>
                                             </FieldProperties>
                                         </Field>
                                     </Fields>

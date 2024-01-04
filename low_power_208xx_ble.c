@@ -48,7 +48,7 @@
 #include "wiced_bt_trace.h"
 #include "wiced_bt_stack.h"
 #include "GeneratedSource/cycfg_gatt_db.h"
-#include "GeneratedSource/cycfg_pins.h"
+#include "cycfg_pins.h"
 #include "app_bt_cfg.h"
 #include "wiced_sleep.h"
 #include "wiced_bt_l2c.h"

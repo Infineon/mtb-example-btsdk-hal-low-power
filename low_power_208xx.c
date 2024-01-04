@@ -41,7 +41,7 @@
 #include "wiced_sleep.h"
 #include "wiced_rtc.h"
 #include "wiced_hal_mia.h"
-#include "GeneratedSource/cycfg_pins.h"
+#include "cycfg_pins.h"
 
 /*******************************************************************
  * Constant Definitions
